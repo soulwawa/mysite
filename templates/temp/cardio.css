@@ -123,9 +123,9 @@ header .table {
 	height: 100%;
 }
 
-header .container {
-	height: 100%;
-}
+/*header .container {*/
+	/*height: 100%;*/
+/*}*/
 
 header .header-text {
 	display: table-cell;
@@ -265,23 +265,18 @@ nav.navbar-fixed-top .navbar-nav > li > a:not(.btn) {
 	top: 50px;
 }
 
-.container {
-	position: relative;
-	z-index: 1;
-}
+/*.container {*/
+	/*position: relative;*/
+	/*z-index: 1;*/
+/*}*/
 /* Sections */
-section {
-	position: relative;
-}
+/*section {*/
+	/*position: relative;*/
+/*}*/
 
-.section {
-	padding: 40px 0;
-	background: #fff;
-}
-
-.section-padded {
-	padding: 140px 0 40px;
-}
+/*.section {*/
+	/*background: #fff;*/
+/*}*/
 
 .cut-top {
 	content: ' ';
@@ -449,9 +444,9 @@ section {
 	}
 }
 
-.services {
-	margin: 40px 0;
-}
+/*.services {*/
+	/*margin: 40px 0;*/
+/*}*/
 
 .service {
 	width: 100%;
@@ -542,9 +537,9 @@ section {
 	border-radius: 50%;
 }
 
-.team .title {
-	margin: 50px 0;
-}
+/*.team .title {*/
+	/*margin: 50px 0;*/
+/*}*/
 /* Pricing */
 
 #pricing {
@@ -654,8 +649,6 @@ section {
 /* Footer */
 
 footer {
-	padding: 140px 0 40px;
-	background: url('../image/footer.jpg');
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -697,10 +690,6 @@ footer .open-blink:before {
 
 footer .opening-hours {
 	margin-top: 60px;
-}
-
-footer .bottom-footer {
-	margin-top: 150px;
 }
 
 footer .social-footer {
@@ -1030,85 +1019,85 @@ footer .social-footer li:hover a {
 	margin-top: 150px;
 }
 
-@media(max-width:992px) {
-	h1 {
-		font-size: 36px;
-	}
-	h2 {
-		font-size: 28px;
-	}
-	h3 {
-		font-size: 24px;
-	}
-	h4 {
-		font-size: 20px;
-	}
-	h5 {
-		font-size: 16px;
-	}
-	h6 {
-		font-size: 12px;
-	}
-	.section {
-		padding: 30px 0;
-	}
-}
+/*@media(max-width:992px) {*/
+	/*h1 {*/
+		/*font-size: 36px;*/
+	/*}*/
+	/*h2 {*/
+		/*font-size: 28px;*/
+	/*}*/
+	/*h3 {*/
+		/*font-size: 24px;*/
+	/*}*/
+	/*h4 {*/
+		/*font-size: 20px;*/
+	/*}*/
+	/*h5 {*/
+		/*font-size: 16px;*/
+	/*}*/
+	/*h6 {*/
+		/*font-size: 12px;*/
+	/*}*/
+	/*.section {*/
+		/*padding: 30px 0;*/
+	/*}*/
+/*}*/
 
-/* Media Queries */
+/*!* Media Queries *!*/
 
-@media(max-width:991px) {
-	.text-center-mobile {
-		text-align: center !important;
-	}
-}
+/*@media(max-width:991px) {*/
+	/*.text-center-mobile {*/
+		/*text-align: center !important;*/
+	/*}*/
+/*}*/
 
-@media(max-width: 768px) {
-	.pricing {
-		margin-bottom: 30px;
-	}
-	.pricings .pricing .info-icon {
-		display: none;
-	}
-	.pricings .pricing .box-main,
-	.pricings .pricing .box-second {
-		left: 0;
-		width: 100%;
-		padding: 50px 50px 0;
-		text-align: left;
-		background: #00a8ff;
-	}
-	.pricings .pricing .box-main.active {
-		background: #00a8ff;
-		-webkit-transform: translateX(0%);
-		-ms-transform: translateX(0%);
-		transform: translateX(0%);
-	}
-	.pricings .pricing .box-second {
-		position: relative;
-		opacity: 1;
-	}
-	.popup-form {
-		width: 100%;
-		margin: 60px auto;
-	}
-	.modal {
-		padding: 0 10px !important;
-	}
-	.popup-form .form-control:not(.dropdown):focus {
-		position: relative;
-		padding-right: 30px;
-		padding-left: 30px;
-	}
-}
+/*@media(max-width: 768px) {*/
+	/*.pricing {*/
+		/*margin-bottom: 30px;*/
+	/*}*/
+	/*.pricings .pricing .info-icon {*/
+		/*display: none;*/
+	/*}*/
+	/*.pricings .pricing .box-main,*/
+	/*.pricings .pricing .box-second {*/
+		/*left: 0;*/
+		/*width: 100%;*/
+		/*padding: 50px 50px 0;*/
+		/*text-align: left;*/
+		/*background: #00a8ff;*/
+	/*}*/
+	/*.pricings .pricing .box-main.active {*/
+		/*background: #00a8ff;*/
+		/*-webkit-transform: translateX(0%);*/
+		/*-ms-transform: translateX(0%);*/
+		/*transform: translateX(0%);*/
+	/*}*/
+	/*.pricings .pricing .box-second {*/
+		/*position: relative;*/
+		/*opacity: 1;*/
+	/*}*/
+	/*.popup-form {*/
+		/*width: 100%;*/
+		/*margin: 60px auto;*/
+	/*}*/
+	/*.modal {*/
+		/*padding: 0 10px !important;*/
+	/*}*/
+	/*.popup-form .form-control:not(.dropdown):focus {*/
+		/*position: relative;*/
+		/*padding-right: 30px;*/
+		/*padding-left: 30px;*/
+	/*}*/
+/*}*/
 
-@media(max-width: 400px) {
-	header .typed-cursor {
-		display: none;
-	}
-	.pricings .pricing .box-second {
-		padding-top: 0;
-	}
-}
+/*@media(max-width: 400px) {*/
+	/*header .typed-cursor {*/
+		/*display: none;*/
+	/*}*/
+	/*.pricings .pricing .box-second {*/
+		/*padding-top: 0;*/
+	/*}*/
+/*}*/
 
 
 
