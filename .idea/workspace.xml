@@ -2,83 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6cb6a34-8e65-454a-aa31-54613879f447" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/mysite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/noun_Accounts Project_1875474.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/noun_Information_753148.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/image/noun_note_1470872.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/devlog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/project.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/temp/base_temp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/cardio.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/cardio.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/et-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/et-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/owl.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/owl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/eleganticons/ElegantIcons.eot" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/eleganticons/ElegantIcons.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/eleganticons/ElegantIcons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/eleganticons/ElegantIcons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/eleganticons/ElegantIcons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/eleganticons/ElegantIcons.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/eleganticons/ElegantIcons.woff" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/eleganticons/ElegantIcons.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/eleganticons/et-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/eleganticons/et-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome-4.1.0/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/font-awesome-4.1.0/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome-4.1.0/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/font-awesome-4.1.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome-4.1.0/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/font-awesome-4.1.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome-4.1.0/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/font-awesome-4.1.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome-4.1.0/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/font-awesome-4.1.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome-4.1.0/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/font-awesome-4.1.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/Readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/android-chrome-36x36.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/android-chrome-36x36.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/android-chrome-48x48.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/android-chrome-48x48.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/apple-touch-icon-57x57.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/apple-touch-icon-57x57.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/apple-touch-icon-60x60.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/apple-touch-icon-60x60.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/apple-touch-icon-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/apple-touch-icon-precomposed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/browserconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/browserconfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/mstile-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/mstile-150x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/mstile-310x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/mstile-310x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/favicons/mstile-70x70.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/favicons/mstile-70x70.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/footer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/footer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/header.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/icons/guru-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/icons/guru-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/icons/heart-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/icons/heart-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/icons/weight-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/icons/weight-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/loader.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/logo-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/logo-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/popup.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/popup.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/pricing1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/pricing1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/pricing2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/pricing2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/profile.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/profile.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/ryan.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/ryan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/table-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/table-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/table-2-hover.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/table-2-hover.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/table-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/table-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/table-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/table-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/team/team-cover1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/team/team-cover1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/team/team-cover2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/team/team-cover2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/team/team-cover3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/team/team-cover3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/team/team1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/team/team1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/team/team2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/team/team2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/image/team/team3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/team/team3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery-1.11.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/jquery-1.11.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.onepagenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/jquery.onepagenav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/owl.carousel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/tooltip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/typed.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/typed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/typewriter.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/typewriter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/wow.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/js/wow.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/mysite.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/mysite.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,22 +54,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="625" />
-          <entry key="html" value="1813" />
+          <entry key="css" value="668" />
+          <entry key="html" value="1885" />
           <entry key="py" value="427" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="625" />
-          <entry key="HTML" value="1813" />
+          <entry key="CSS" value="668" />
+          <entry key="HTML" value="1885" />
           <entry key="Python" value="427" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46733668">
+    <splitter split-orientation="horizontal" split-proportion="0.48052764">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -158,8 +84,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/about.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="438">
-                  <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+                <state relative-caret-position="116">
+                  <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -219,8 +145,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/css/mysite.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="386">
-                  <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+                <state relative-caret-position="461">
+                  <caret line="201" column="19" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -228,8 +154,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-418">
-                  <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+                <state relative-caret-position="277">
+                  <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
                 </state>
               </provider>
             </entry>
@@ -266,7 +192,6 @@
       <find>team</find>
       <find>title</find>
       <find>row</find>
-      <find>ul</find>
       <find>nav</find>
       <find>h2</find>
       <find>author</find>
@@ -275,6 +200,9 @@
       <find>img</find>
       <find>description</find>
       <find>p</find>
+      <find>social</find>
+      <find>center</find>
+      <find>ul</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -295,8 +223,8 @@
         <option value="$PROJECT_DIR$/blog/urls.py" />
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/templates/project.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/devlog.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/static/css/mysite.css" />
       </list>
@@ -649,22 +577,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/mysite.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-249">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        <state relative-caret-position="277">
+          <caret line="69" column="58" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+        <state relative-caret-position="116">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/mysite.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="201" column="19" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="19" />
         </state>
       </provider>
     </entry>
