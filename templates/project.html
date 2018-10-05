@@ -1,13 +1,68 @@
 {% extends 'base.html' %}
+{% block home_button %}
+  <div class="col-md-12"> <a href="{% url 'blog:index' %}" class="btn btn-sm animated-button thar-three">3e HOME &nbsp;<i class="fas fa-undo-alt"></i></a> </div>
+{% endblock %}
+
 {% block content %}
-  <div class="row services">
+  <!-- About -->
+  <div class="row services-content">
     <div class="col-md-4">
-      <div class="service">
-        <div class="icon-holder" onclick="location.href='/';">>
-          <img src="../static/image/noun_Accounts%20Project_1875474.png" alt="project" class="icon">
+      <div class="service-header">
+        <div class="icon-holder">
+          <img src="../static/image/noun_Accounts%20Project_1875474.png" alt="about" class="icon">
         </div>
         <h4 class="heading">Project</h4>
-        <p class="description">Project...</p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="service-content">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-center description">NAME</p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-center-mobile description">고 석 만 / Ko Seok Man</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-center description">JOB</p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-center-mobile description">개 발 자  / Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Career -->
+  <div class="row services-content">
+    <div class="col-md-4">
+      <div class="service-header">
+        <div class="icon-holder">
+          <img src="../static/image/noun_web%20developer_1873915.png" alt="about" class="icon">
+        </div>
+        <h4 class="heading">Career</h4>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="service-content">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-center description"></p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-left description"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text-center description">18.06 ~</p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-center-mobile description">DPlatform / Developer</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

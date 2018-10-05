@@ -25,8 +25,9 @@
 <section id="services" class="section">
   <div class="container">
     <div class="row text-center title">
-      <h2></h2>
-      <h4 class="light muted"></h4>
+      {% block home_button %}
+{#      <h4 class="light muted"></h4>#}
+      {% endblock %}
     </div>
     {% block content %}
       <div class="row services">
@@ -35,7 +36,7 @@
             <div class="icon-holder">
               <img src="../static/image/noun_Information_753148.png" alt="about" class="icon">
             </div>
-            <h4 class="heading"><span class="about"></span></h4>
+            <h4 class="heading">About</h4>
             <p class="description">Introduce 3e..</p>
           </div>
         </div>
@@ -44,7 +45,7 @@
             <div class="icon-holder">
               <img src="../static/image/noun_Accounts%20Project_1875474.png" alt="project" class="icon">
             </div>
-            <h4 class="heading"><span class="project"></span></h4>
+            <h4 class="heading">Project</h4>
             <p class="description">My Project...</p>
           </div>
         </div>
@@ -53,8 +54,8 @@
             <div class="icon-holder">
               <img src="../static/image/noun_note_1470872.png" alt="log" class="icon">
             </div>
-            <h4 class="heading"><span class="devlog"></span></h4>
-            <p class="description">It's dev log..</p>
+            <h4 class="heading">Dev Note Log</h4>
+            <p class="description">It's dev Note log..</p>
           </div>
         </div>
       </div>
@@ -68,6 +69,12 @@
         <p>Copyright 2018. 3e All rights reserved</p>
       </div>
       <div class="col-sm-4 text-right text-center-mobile">
+        <ul class="social-footer">
+          <li><a href="mailto:soulwawa85@gmail.com"><i class="fas fa-envelope-open"></i></a></li>
+          <li><a href="https://www.facebook.com/soulwawa"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="https://www.facebook.com/soulwawa"><i class="fab fa-gitlab"></i></a></li>
+          <li><a href="https://www.facebook.com/soulwawa"><i class="fab fa-github"></i></a></li>
+        </ul>
       </div>
     </div>
   </div>

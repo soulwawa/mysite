@@ -66,7 +66,7 @@ header .container {
 }
 
 .row.title {
-	padding: 0 20px;
+	/*padding: 0 20px;*/
 }
 
 .services {
@@ -107,26 +107,22 @@ section {
 
 .service-header {
 	width: 100%;
-	height: 320px;
+	height: 200px;
 	margin: 40px 0;
 	text-align: center;
 	border: 1px solid #ddd;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
 }
 
 .service-content {
 	width: 100%;
-	height: 320px;
+	height: 200px;
 	margin: 40px 0;
 	border: 1px solid #ddd;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
-	padding-top: 50px;
 }
 
-.service .icon-holder,
-.service-header .icon-holder {
+.service .icon-holder {
 	position: relative;
 	top: 100px;
 	display: inline-block;
@@ -137,10 +133,25 @@ section {
 	transition: all 0.3s ease;
 }
 
-.service .heading,
-.service-header .heading {
+.service-header .icon-holder {
+	position: relative;
+	top: 10px;
+	display: inline-block;
+	padding: 10px;
+	background: white;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.service .heading {
 	position: relative;
 	top: 80px;
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.service-header .heading {
+	position: relative;
 	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -214,10 +225,38 @@ footer > div > div > div.col-sm-8 > p {
 	padding-left: 15px;
 }
 
-ul.social-footer {
-	margin: 0;
-	padding-top: 20px;
+a.animated-button.thar-three {
+	color: black;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 1px solid #ddd;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+	font-size: 24px
 }
+a.animated-button.thar-three:hover {
+	color: white !important;
+	background-color: transparent;
+}
+a.animated-button.thar-three:hover:before {
+	left: 0;
+	right: auto;
+	width: 100%;
+}
+a.animated-button.thar-three:before {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 0;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: black;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
 
 @media(max-width:992px) {
 	h1 {
@@ -248,6 +287,9 @@ ul.social-footer {
 @media(max-width:991px) {
 	.text-center-mobile {
 		text-align: center !important;
+	}
+	.service-content {
+		height: auto;
 	}
 }
 
