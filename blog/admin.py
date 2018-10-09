@@ -11,6 +11,15 @@ class PostAdmin(admin.ModelAdmin):
             'widget': AdminMartorWidget
         }
     }
+    exclude = ('views', )
+    list_display = ['title', 'short_contents', 'get_tag_set', 'created_at']
+
+    def short_contents(self, item):
+        return item.contents[:20]
+
+    def get_tag_set(self, item):
+        return "\n".join([p.name for p in item.tag_set.all()])
+
 
 @admin.register(Tag)
 class PostAdmin(admin.ModelAdmin):

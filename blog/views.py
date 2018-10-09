@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from blog.models import Post,Tag
 
 
 def index(request):
@@ -14,4 +15,15 @@ def project(request):
 
 
 def devlog(request):
-    return render(request, "devlog.html")
+    post_list = Post.objects.all()
+    post_tag = Post.objects.order_by(
+        'tag_set__name', 'title'
+    )
+    tag_list = Tag.objects.all()
+    # result = post_tag.distinct("title")
+    # print(result)
+    print(post_tag)
+    return render(request, "devlog.html", {
+        'post_list': post_list,
+        'tag_list': tag_list
+    })

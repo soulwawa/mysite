@@ -1,15 +1,47 @@
 {% extends 'base.html' %}
+{% block home_button %}
+  <div class="col-md-12"> <a href="{% url 'blog:index' %}" class="btn btn-sm animated-button thar-three">3e HOME &nbsp;<i class="fas fa-undo-alt"></i></a> </div>
+{% endblock %}
+
 {% block content %}
-  <div class="row services">
-    <div class="col-md-4" onclick="location.href='/';">
-      <div class="service">
+  <!-- Detail -->
+  <div class="row services-content">
+    <div class="col-md-2">
+      <div class="service-header service-header-log">
         <div class="icon-holder">
           <img src="../static/image/noun_note_1470872.png" alt="log" class="icon">
         </div>
-        <h4 class="heading">Dev LOG</h4>
-        <p class="description">It's dev log..</p>
       </div>
     </div>
-
+    <div class="col-md-10">
+      <div class="service-content service-content-log">
+        <h4 style="font-family: 'Audiowide', serif" class="heading heading-log-title">Development notes are incorrect answer notes for studying development.  </h4>
+      </div>
+    </div>
   </div>
+  <hr>
+  <!-- Blog Contents -->
+  {% for post in post_list %}
+  <div class="row services-content">
+    <div class="col-md-2">
+      <div class="service-header service-header-log">
+        <div class="icon-holder">
+          {% for tag in post.tag_set.all|slice:":1" %}
+          {% for tag_first in tag_list %}
+            {% if tag_first == tag %}
+              <i class="{{ tag_first.name_url }}"></i>
+            {% else %}
+            {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="service-content service-content-log">
+       <h4 class="heading heading-log-title"> {{ post.title }} {{ post.updated_at|date:'Y-M-D H:i' }}</h4>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
 {% endblock %}

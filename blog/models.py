@@ -5,6 +5,7 @@ from martor.models import MartorField
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    name_url = models.CharField(max_length=50, default='<i class="fas fa-sticky-note"></i>')
 
     def __str__(self):
         return self.name
