@@ -1,7 +1,16 @@
 from django.contrib import admin
-from markdownx.admin import MarkdownxModelAdmin
+from django.db.models import TextField
+from pagedown.widgets import AdminPagedownWidget
 from .models import Post, Tag
 
 my_models = [Post, Tag]
-admin.site.register(Post, MarkdownxModelAdmin)
+
+
+class AlbumAdmin(admin.ModelAdmin):
+    formfield_overrides = {TextField: {
+        'widget': AdminPagedownWidget
+    }}
+
+
+admin.site.register(Post, AlbumAdmin)
 
