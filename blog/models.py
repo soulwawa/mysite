@@ -1,17 +1,24 @@
 from django.db import models
 from django.utils import timezone
-from markdownx.models import MarkdownxField
+from martor.models import MartorField
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
     idx = models.AutoField(primary_key=True, db_index=True)
     title = models.CharField(max_length=100)
-    contents = MarkdownxField()
+    contents = MartorField()
     views = models.PositiveIntegerField(default=0)
-    tag_set = models.ManyToManyField('TAG', blank=True)
+    tag_set = models.ManyToManyField(Tag, blank=True)
     is_published = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at =models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def publish(self):
         self.updated_at = timezone.now()
@@ -21,5 +28,4 @@ class Post(models.Model):
         return self.title
 
 
-class Tag(models.Model):
-    name = models.CharField(max_length=50, unique=True)
+

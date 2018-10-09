@@ -1,4 +1,6 @@
 from django import forms
-from .models import Post
-from pagedown.widgets import AdminPagedownWidget
+from martor.fields import MartorFormField
 
+
+class PostForm(forms.Form):
+    contents = MartorFormField()

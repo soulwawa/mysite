@@ -109,3 +109,5 @@ fabric.properties
 \.idea/mysite\.iml
 
 \.idea/vcs\.xml
+
+test\.py
