@@ -15,33 +15,39 @@
     </div>
     <div class="col-md-10">
       <div class="service-content service-content-log">
-        <h4 style="font-family: 'Audiowide', serif" class="heading heading-log-title">Development notes are incorrect answer notes for studying development.  </h4>
+        <span class="input input--3e col-md-12">
+					<input class="input__field input__field--3e" type="text" id="input-log">
+					<label class="input__label input__label--3e" for="input-log">
+						<span lang="en" class="input__label-content input__label-content--3e" id="full-text">Dev notes are incorrect answer notes for studying development. </span>
+            <span lang="en" class="input__label-content input__label-content--3e" id="short-text">Search Dev Log</span>
+					</label>
+				</span>
       </div>
     </div>
   </div>
   <hr>
   <!-- Blog Contents -->
   {% for post in post_list %}
-  <div class="row services-content">
-    <div class="col-md-2">
-      <div class="service-header service-header-log">
-        <div class="icon-holder">
-          {% for tag in post.tag_set.all|slice:":1" %}
-          {% for tag_first in tag_list %}
-            {% if tag_first == tag %}
-              <i class="{{ tag_first.name_url }}"></i>
-            {% else %}
-            {% endif %}
-          {% endfor %}
-          {% endfor %}
+    <div class="row services-content">
+      <div class="col-md-2">
+        <div class="service-header service-header-log">
+          <div class="icon-holder">
+            {% for tag in post.tag_set.all|slice:":1" %}
+              {% for tag_first in tag_list %}
+                {% if tag_first == tag %}
+                  <i class="{{ tag_first.name_url }}"></i>
+                {% else %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="service-content service-content-log">
+          <h4 class="heading heading-log-title"> {{ post.title }} {{ post.updated_at|date:'Y-M-D H:i' }}</h4>
         </div>
       </div>
     </div>
-    <div class="col-md-10">
-      <div class="service-content service-content-log">
-       <h4 class="heading heading-log-title"> {{ post.title }} {{ post.updated_at|date:'Y-M-D H:i' }}</h4>
-      </div>
-    </div>
-  </div>
   {% endfor %}
 {% endblock %}

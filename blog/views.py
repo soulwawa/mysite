@@ -22,7 +22,7 @@ def devlog(request):
     tag_list = Tag.objects.all()
     # result = post_tag.distinct("title")
     # print(result)
-    print(post_tag)
+    # print(post_tag)
     return render(request, "devlog.html", {
         'post_list': post_list,
         'tag_list': tag_list
