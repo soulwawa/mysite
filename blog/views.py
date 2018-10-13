@@ -15,7 +15,7 @@ def project(request):
 
 
 def devlog(request):
-    post_list = Post.objects.all()
+    post_list = Post.objects.all().order_by('-updated_at')
 
     # tag_list = post_list.tag_set.all()
     # print(tag_list)

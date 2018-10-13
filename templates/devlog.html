@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-  <!-- Detail -->
+  <!-- Search -->
   <div class="row services-content">
     <div class="col-md-2">
       <div class="service-header service-header-log">
@@ -27,23 +27,22 @@
   </div>
   <hr>
   <!-- Blog Contents -->
+  <div class="col-md-12">
   {% for post in post_list %}
-    <div class="row services-content">
-      <div class="col-md-2">
-        <div class="service-header service-header-log">
-          <div class="icon-holder">
-            {% for tag in post.tag_set.all|slice:":1" %}
-                  <i class="{{ tag.name_url }}"></i>
-              <br><span class="text-center">{{ tag }}</span>
-            {% endfor %}
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <div class="icon-holder col-md-2">
+              <i class="{{ post.tag_set.first.name_url }}"></i><br>
+              <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
           </div>
+            <h5 class="mb-1">{{ post.title }}</h5>
+            <small>{{ post.updated_at|date:'Y-M-D H:i' }}</small>
+            <p class="mb-1">{{ post.contents }}</p>
+
         </div>
-      </div>
-      <div class="col-md-10">
-        <div class="service-content service-content-log">
-          <h4 class="heading heading-log-title"> {{ post.title }} {{ post.updated_at|date:'Y-M-D H:i' }}</h4>
-        </div>
-      </div>
+      </a>
     </div>
   {% endfor %}
+  </div>
 {% endblock %}
