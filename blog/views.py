@@ -16,14 +16,12 @@ def project(request):
 
 def devlog(request):
     post_list = Post.objects.all()
-    post_tag = Post.objects.order_by(
-        'tag_set__name', 'title'
-    )
-    tag_list = Tag.objects.all()
+    # tag_list = post_list.tag_set.all()
+    # print(tag_list)
     # result = post_tag.distinct("title")
     # print(result)
     # print(post_tag)
     return render(request, "devlog.html", {
         'post_list': post_list,
-        'tag_list': tag_list
+        # 'tag_list': tag_list
     })
