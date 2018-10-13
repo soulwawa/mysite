@@ -16,6 +16,7 @@ def project(request):
 
 def devlog(request):
     post_list = Post.objects.all()
+
     # tag_list = post_list.tag_set.all()
     # print(tag_list)
     # result = post_tag.distinct("title")
