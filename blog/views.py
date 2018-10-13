@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import Post,Tag
+from blog.models import Post, Tag
 
 
 def index(request):
