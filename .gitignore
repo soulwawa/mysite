@@ -111,3 +111,5 @@ fabric.properties
 \.idea/vcs\.xml
 
 test\.py
+
+\.idea/inspectionProfiles/Project_Default\.xml
