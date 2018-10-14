@@ -16,3 +16,4 @@ MIDDLEWARE_CLASSES = (
 
 # 기존 DATABASES
 DATABASES['default'].update(db_from_env)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
