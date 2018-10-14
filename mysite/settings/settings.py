@@ -127,13 +127,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
-STATIC_ROOT = join(BASE_DIR, 'collectstatic')
+STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')
 
 MEDIA_URL = '/media/'
 MEDIA_DIRS = (
-    join(BASE_DIR, 'media'),
+    os.path.join(BASE_DIR, 'media'),
 )
 
 # Global martor settings
