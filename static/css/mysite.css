@@ -189,7 +189,8 @@ section {
 
 .icon-holder i{
 	font-size: 50px;
-	margin-top: 10px;
+	margin-top: 15px;
+	/*margin-bottom: 25px;*/
 }
 .service:hover {
 	border-color: #00a8ff;
@@ -296,6 +297,10 @@ hr {
 	display: none;
 }
 
+.log-left {
+	padding: 0;
+}
+
 @media(max-width:992px) {
 	h1 {
 		font-size: 36px;
@@ -335,8 +340,11 @@ hr {
 	.service-content {
 		height: auto;
 	}
-	.col-md-2{
+	.icon-holder.col-md-2{
 		display: none;
+	}
+	.log-left {
+		padding: 15px;
 	}
 }
 

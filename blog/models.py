@@ -3,6 +3,11 @@ from django.utils import timezone
 from martor.models import MartorField
 
 
+class PostManger(models.Manager):
+    def get_queryset(self):
+        return super(PostManger, self).get_queryset().filter(is_published=True)
+
+
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     name_url = models.CharField(max_length=50, default='<i class="fas fa-sticky-note"></i>')
@@ -20,6 +25,11 @@ class Post(models.Model):
     is_published = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    objects = PostManger()
+
+    class Meta:
+        ordering = ['-updated_at']
 
     def publish(self):
         self.updated_at = timezone.now()

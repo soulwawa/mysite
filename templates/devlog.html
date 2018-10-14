@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block home_button %}
   <div class="col-md-12"> <a href="{% url 'blog:index' %}" class="btn btn-sm animated-button thar-three">3e HOME &nbsp;<i class="fas fa-undo-alt"></i></a> </div>
 {% endblock %}
@@ -9,40 +10,49 @@
     <div class="col-md-2">
       <div class="service-header service-header-log">
         <div class="icon-holder">
-          <img src="../static/image/noun_note_1470872.png" alt="log" class="icon">
+          <img src="{% static 'image/noun_note_1470872.png' %}" alt="log" class="icon">
         </div>
       </div>
     </div>
     <div class="col-md-10">
       <div class="service-content service-content-log">
+        <form action="{% url 'blog:dev-search' %}" method="get">
         <span class="input input--3e col-md-12">
-					<input class="input__field input__field--3e" type="text" id="input-log">
+					<input class="input__field input__field--3e" type="text" id="input-log" name="search">
 					<label class="input__label input__label--3e" for="input-log">
 						<span lang="en" class="input__label-content input__label-content--3e" id="full-text">Search Here - Dev notes are incorrect answer notes for studying development. </span>
             <span lang="en" class="input__label-content input__label-content--3e" id="short-text">Search Dev Log</span>
 					</label>
 				</span>
+          </form>
       </div>
     </div>
   </div>
   <hr>
   <!-- Blog Contents -->
   <div class="col-md-12">
+  <div class="col-md-8 log-left">
   {% for post in post_list %}
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
+        <div class="d-flex">
           <div class="icon-holder col-md-2">
-              <i class="{{ post.tag_set.first.name_url }}"></i><br>
-              <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
+              <i class="{{ post.tag_set.first.name_url }}"></i>
           </div>
+            <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
             <h5 class="mb-1">{{ post.title }}</h5>
             <small>{{ post.updated_at|date:'Y-M-D H:i' }}</small>
-            <p class="mb-1">{{ post.contents }}</p>
-
         </div>
       </a>
     </div>
   {% endfor %}
+   </div>
+    <div class="col-md-3 col-md-offset-1">
+      <ul class="list-group list-group-flush">
+        {% for tag in tag_list %}
+          <a href="{% url 'blog:tag-search' tag.name %}" class="list-group-item">{{ tag.name }}</a>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 {% endblock %}
