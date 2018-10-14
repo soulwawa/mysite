@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load martortags %}
 {% block home_button %}
   <div class="col-md-12"> <a href="{% url 'blog:index' %}" class="btn btn-sm animated-button thar-three">3e HOME &nbsp;<i class="fas fa-undo-alt"></i></a> </div>
 {% endblock %}
@@ -32,18 +33,14 @@
   <!-- Blog Contents -->
   <div class="col-md-12">
   <div class="col-md-8 log-left">
-  {% for post in post_list %}
-    <div class="list-group">
-      <a href="{% url 'blog:dev-detail' post.title %}" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex">
-          <div class="icon-holder col-md-2">
-              <i class="{{ post.tag_set.first.name_url }}"></i>
-          </div>
-            <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
-            <h5 class="mb-1">{{ post.title }}</h5>
-            <small>{{ post.updated_at|date:'Y-M-D H:i' }}</small>
-        </div>
-      </a>
+    {% for post in post_list %}
+    <div class="post">
+      {% if post.updated_at %}
+      <div class="date">
+        {{ post.updated_at }}
+      </div>
+      {% endif %}
+        <p>{{ post.contents | safe_markdown}}</p>
     </div>
   {% endfor %}
    </div>
@@ -55,4 +52,23 @@
       </ul>
     </div>
   </div>
+  <div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mysite-yhvszvtzvh.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endblock %}

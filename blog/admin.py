@@ -12,7 +12,7 @@ class PostAdmin(admin.ModelAdmin):
         }
     }
     exclude = ('views', )
-    list_display = ['title', 'short_contents', 'get_tag_set', 'created_at']
+    list_display = ['title', 'short_contents', 'get_tag_set', 'created_at', 'is_published']
 
     def short_contents(self, item):
         return item.contents[:20]
@@ -20,7 +20,6 @@ class PostAdmin(admin.ModelAdmin):
     def get_tag_set(self, item):
         return "\n".join([p.name for p in item.tag_set.all()])
 
-
 @admin.register(Tag)
-class PostAdmin(admin.ModelAdmin):
+class TagAdmin(admin.ModelAdmin):
     pass
