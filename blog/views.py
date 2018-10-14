@@ -40,7 +40,6 @@ def dev_search(request):
 def tag_search(request, tag):
     tag_list = Tag.objects.all()
     post_list = Post.objects.filter(tag_set__name__icontains=tag)
-    post_list.update(views=F('count')+1)
     return render(request, "devlog.html", {
         'post_list': post_list,
         'tag_list': tag_list
