@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from os.path import abspath, dirname, join
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -25,7 +27,7 @@ SECRET_KEY = 'c5sdx-vj1g@3x1z$m^y8!4%*f##@9b-0z53rfhyti1q0rf0l9x'
 DEBUG = True
 
 if DEBUG is False:
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 if DEBUG is True:
     ALLOWED_HOSTS = ['*']
 
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,13 +128,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    join(BASE_DIR, 'static'),
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'collectstatic')
+STATIC_ROOT = join(BASE_DIR, 'collectstatic')
 
 MEDIA_URL = '/media/'
 MEDIA_DIRS = (
-    os.path.join(BASE_DIR, 'media'),
+    join(BASE_DIR, 'media'),
 )
 
 # Global martor settings
