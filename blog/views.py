@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q, F
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
 
 
@@ -18,9 +19,21 @@ def project(request):
 def devlog(request):
     post_list = Post.objects.all()
     tag_list = Tag.objects.all()
+    number_list = range(1, 1000)
+    page = request.GET.get('page', 1)
+    paginator = Paginator(number_list, 10)
+
+    # Paginator
+    try:
+        numbers = paginator.page(page)
+    except PageNotAnInteger:
+        numbers = paginator.page(1)
+    except EmptyPage:
+        numbers = paginator.page(paginator.num_pages)
     return render(request, "devlog.html", {
         'post_list': post_list,
-        'tag_list': tag_list
+        'tag_list': tag_list,
+        'numbers': numbers
     })
 
 
