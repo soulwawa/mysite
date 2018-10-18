@@ -6,7 +6,7 @@ from blog.models import Post, Tag
 
 
 def index(request):
-    return render(request, "base.html")
+    return render(request, "index.html")
 
 
 def about(request):
@@ -22,7 +22,7 @@ def devlog(request):
     tag_list = Tag.objects.all()
     # number_list = range(1, 1000)
     page = request.GET.get('page', 1)
-    paginator = Paginator(post_list, 5)
+    paginator = Paginator(post_list, 4)
 
     # Paginator
     try:

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class="row services">
+    <div class="col-md-4">
+      <div class="service" onclick="location.href='{% url 'blog:about' %}';">
+        <div class="icon-holder">
+          <img src="{% static 'image/noun_Information_753148.png' %}" alt="about" class="icon">
+        </div>
+        <h4 class="heading" lang="en">About</h4>
+        <p class="description" lang="en">Introduce 3e..</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service" onclick="location.href='{% url 'blog:project' %}';">
+        <div class="icon-holder">
+          <img src="{% static 'image/noun_Accounts Project_1875474.png' %}" alt="project" class="icon">
+        </div>
+        <h4 class="heading" lang="en">Project</h4>
+        <p class="description" lang="en">My Project...</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service" onclick="location.href='{% url 'blog:devlog' %}';">
+        <div class="icon-holder">
+          <img src="{% static 'image/noun_note_1470872.png' %}" alt="log" class="icon">
+        </div>
+        <h4 class="heading" lang="en">Dev Notes</h4>
+        <p class="description" lang="en">It's Dev notes log..</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scroll %}
+{% endblock %}
