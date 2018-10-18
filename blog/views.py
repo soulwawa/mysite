@@ -45,13 +45,14 @@ class DevLogViews(ListView):
     context_object_name = 'post_list'
     template_name = "devlog.html"
 
+
 def dev_search(request):
     tag_list = Tag.objects.all()
     if request.GET.get("search") != "":
         request_value = request.GET.get("search")
-        post_list = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
+        post_pages = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
         return render(request, "devlog.html", {
-            'post_list': post_list,
+            'post_pages': post_pages,
             'tag_list': tag_list
         })
     else:
