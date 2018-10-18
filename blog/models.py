@@ -15,7 +15,7 @@ class PostManger(models.Manager):
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    name_url = models.CharField(max_length=50, default='<i class="fas fa-sticky-note"></i>')
+    name_url = models.CharField(max_length=50, default='fas fa-sticky-note')
 
     def __str__(self):
         return self.name
