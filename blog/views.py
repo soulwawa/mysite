@@ -61,9 +61,9 @@ def dev_search(request):
 
 def tag_search(request, tag):
     tag_list = Tag.objects.all()
-    post_list = Post.objects.filter(tag_set__name__icontains=tag)
+    post_pages = Post.objects.filter(tag_set__name__icontains=tag)
     return render(request, "devlog.html", {
-        'post_list': post_list,
+        'post_pages': post_pages,
         'tag_list': tag_list
     })
 
