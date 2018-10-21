@@ -436,5 +436,22 @@ hr {
 	}
 }
 
+#myBtnTop {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  font-size: 5rem;
+  border: none;
+  outline: none;
+  color: black;
+  cursor: pointer;
+	background: transparent;
+}
+
+#myBtnTop:hover {
+  background-color: #555;
+}
 
 
