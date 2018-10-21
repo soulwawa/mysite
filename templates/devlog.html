@@ -55,7 +55,7 @@
               </div>
               <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
               <h5 class="mb-1">{{ post.title }}</h5>
-              <small>{{ post.updated_at|date:'Y-M-D H:i' }}</small>
+              <small>{{ post.updated_at|date:"SHORT_DATE_FORMAT"}}</small>
             </div>
           </a>
         </div>

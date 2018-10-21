@@ -37,7 +37,7 @@
     <div class="post">
       {% if post.updated_at %}
       <div class="date">
-        {{ post.updated_at }}
+        {{ post.updated_at|date:"SHORT_DATE_FORMAT"}}
       </div>
       {% endif %}
         <p>{{ post.contents | safe_markdown}}</p>

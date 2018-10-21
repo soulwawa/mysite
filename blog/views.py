@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q, F
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.generic.list import ListView
 from blog.models import Post, Tag
 
 
@@ -20,7 +19,6 @@ def project(request):
 def devlog(request):
     post_list = Post.objects.all()
     tag_list = Tag.objects.all()
-    # number_list = range(1, 1000)
     page = request.GET.get('page', 1)
     paginator = Paginator(post_list, 4)
 
@@ -37,13 +35,6 @@ def devlog(request):
         'tag_list': tag_list,
         # 'numbers': numbers
     })
-
-
-class DevLogViews(ListView):
-    model = Post
-    paginate_by = 5
-    context_object_name = 'post_list'
-    template_name = "devlog.html"
 
 
 def dev_search(request):

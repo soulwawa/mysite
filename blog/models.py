@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from martor.models import MartorField
 from django.contrib.auth.models import User
+from django.db.models.functions import Lower
 
 
 class PostManger(models.Manager):
@@ -19,6 +20,9 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = [Lower('name')]
 
 
 class Post(models.Model):
