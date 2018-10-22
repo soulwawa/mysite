@@ -1,11 +1,40 @@
-# Django orm order_by capitalize-alphabet
+# python pep8 summary
 <br><br>
 
-#### ORM 정렬할때 대문자 소문자 상관없이 정렬 하고 싶은경우
-```python
-from django.db.models.functions import Lower
-MyModel.objects.order_by(Lower('myfield'))
-```
+#### python pep8 summary
+> Style Guide for Python Code 
+
+<br>
+
+#### 피해야될 이름
+> 소문자, 대문자 한글마나 변수의 이름으로 쓰는 것. 특정 폰트에서 헷갈릴수도 있기 때문 .
+
+##### 패키지와 모듈의 이름
+> 모듈 이름은 짧아야하고, 전부 소문자, 가독성을 위해 밑줄(_)을 쓸 순 잇음.
+> 패키지 이름 또한 짧아야 하고, 전부 소문자. 밑줄은 권장하지 않음.
+
+#### 클래스 이름
+> 클래스 이름은 CapitalizedWords(CapWords or CamelCase) 형식.
+
+#### Exceptions 이름
+> Exception은 클래스이므로, class와 동일 하게 적용.
+> 다만, 맨 뒤는 "Error"로 끝나야 합니다.
+
+#### 전역변수의 이름
+> 전역 변수는 모듈 안에서만 쓰인다고 가정.
+> 함수 이름 짓는 것과 동일.
+
+#### 함수의 이름
+> 함수의 이름은 원칙적으로 소문자여하고, 가독성을 위해 밑줄(_)로 단어를 구분.
+
+#### 함수와 메소드의 인자
+> 메소드의 인스턴스에 쓰이는 첫 번째 인자는 무조건 self여야 합니다.
+> 클래스 메소드의 첫 번째 인자는 무조건 cls여야 합니다.
+> 예약된 키워와 함수의 인자가 겹치는 경우, 변수 이름 맨 뒤에 밑줄 하나를 붙이는것으로 대체.
+
+#### 메소드 이름과 인스턴스의 이름
+> 힘수 와 동일
+> public이 아닌 메소드나 인스턴스의 이름은 밑줄로 시작.
 
 <br><br>
 > 출처 : stackoverflow

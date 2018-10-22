@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
 
     'martor',
-    'debug_toolbar'
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -194,3 +194,56 @@ MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/' # default (ch
 CSRF_COOKIE_HTTPONLY = False
 
 INTERNAL_IPS = '127.0.0.1'
+
+# LOGGING
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            # 'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'format': '{levelname} {server_time} {message}',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
+        'django.server': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'django.server',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'config.logging.logging.SendgridAdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'mail_admins'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.server': {
+            'handlers': ['django.server'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_API_KEY = "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"
