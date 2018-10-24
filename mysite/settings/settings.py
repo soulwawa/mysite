@@ -247,3 +247,13 @@ LOGGING = {
 }
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
 SENDGRID_API_KEY = "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"
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}

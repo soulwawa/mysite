@@ -2,18 +2,28 @@ from django.shortcuts import render, redirect
 from django.db.models import Q, F
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
+from django.core.cache import cache
 
 
 def index(request):
-    return render(request, "index.html")
+    tag_list = Tag.objects.all()
+    tag = ", ".join([i.name for i in tag_list])
+    cache.set("tag", tag, timeout=None)
+    return render(request, "index.html", {
+        "tag": cache.get("tag")
+    })
 
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "about.html", {
+        "tag": cache.get("tag")
+    })
 
 
 def project(request):
-    return render(request, "project.html")
+    return render(request, "project.html", {
+        "tag": cache.get("tag")
+    })
 
 
 def devlog(request):
@@ -33,6 +43,7 @@ def devlog(request):
     return render(request, "devlog.html", {
         'post_pages': post_pages,
         'tag_list': tag_list,
+        "tag": cache.get("tag")
         # 'numbers': numbers
     })
 
@@ -44,7 +55,8 @@ def dev_search(request):
         post_pages = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
         return render(request, "devlog.html", {
             'post_pages': post_pages,
-            'tag_list': tag_list
+            'tag_list': tag_list,
+            "tag": cache.get("tag")
         })
     else:
         return redirect('blog:devlog')
@@ -55,7 +67,8 @@ def tag_search(request, tag):
     post_pages = Post.objects.filter(tag_set__name__icontains=tag)
     return render(request, "devlog.html", {
         'post_pages': post_pages,
-        'tag_list': tag_list
+        'tag_list': tag_list,
+        "tag": cache.get("tag")
     })
 
 
@@ -65,7 +78,8 @@ def dev_detail(request, title):
     post_list.update(views=F('views') + 1)
     return render(request, "devlog_detail.html", {
         'post_list': post_list,
-        'tag_list': tag_list
+        'tag_list': tag_list,
+        "tag": cache.get("tag")
     })
 
 
