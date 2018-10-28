@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load martortags %}
+{% block title %}
+  - {{ post_list.first.title }}
+{% endblock %}
 {% block home_button %}
   <div class="col-md-12"> <a href="{% url 'blog:index' %}" class="btn btn-sm animated-button thar-three">3e HOME &nbsp;<i class="fas fa-undo-alt"></i></a> </div>
 {% endblock %}
