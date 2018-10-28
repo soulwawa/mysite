@@ -1,18 +1,16 @@
 :lang(ko) {
-  font-family: 'Noto+Sans+KR', serif
+  font-family: 'Godo', sans-serif
 }
 
 :lang(en) {
-  font-family: "Audiowide", serif
+  font-family: "Consolas", sans-serif;
+	font-weight: bold;
 }
 
 body {
-	font-family: 'Noto+Sans+KR', sans-serif;
+	font-family: 'Godo', sans-serif;
 	font-size: 14px;
 	overflow-x: hidden;
-	color: #2a3237;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -101,7 +99,6 @@ section {
 
 .heading {
 	padding: 30px;
-	font-family: Audiowide, sans-serif;
 }
 
 .service {
@@ -179,7 +176,6 @@ section {
 	font-size: 20px;
 }
 .service-content-log .heading-log-title {
-	font-family: 'Noto+Sans+KR', sans-serif;
 	font-size: 20px;
 }
 .service .icon-holder > img.icon,
@@ -263,7 +259,6 @@ a.animated-button.thar-three {
 	border: 1px solid #ddd;
 	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 	font-size: 24px;
-	font-family: Audiowide, 'sans-serif';
 }
 a.animated-button.thar-three:hover {
 	color: white !important;
