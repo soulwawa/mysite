@@ -26,7 +26,7 @@ def project(request):
     })
 
 
-def devlog(request):
+def dev_notes(request):
     post_list = Post.objects.all()
     tag_list = Tag.objects.all()
     page = request.GET.get('page', 1)
@@ -40,7 +40,7 @@ def devlog(request):
     except EmptyPage:
         post_pages = paginator.page(paginator.num_pages)
     # print(post_pages.object_list)
-    return render(request, "devlog.html", {
+    return render(request, "dev_notes.html", {
         'post_pages': post_pages,
         'tag_list': tag_list,
         "tag": cache.get("tag")
@@ -53,19 +53,19 @@ def dev_search(request):
     if request.GET.get("search") != "":
         request_value = request.GET.get("search")
         post_pages = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
-        return render(request, "devlog.html", {
+        return render(request, "dev_notes.html", {
             'post_pages': post_pages,
             'tag_list': tag_list,
             "tag": cache.get("tag")
         })
     else:
-        return redirect('blog:devlog')
+        return redirect('blog:dev-notes')
 
 
 def tag_search(request, tag):
     tag_list = Tag.objects.all()
     post_pages = Post.objects.filter(tag_set__name__icontains=tag)
-    return render(request, "devlog.html", {
+    return render(request, "dev_notes.html", {
         'post_pages': post_pages,
         'tag_list': tag_list,
         "tag": cache.get("tag")
@@ -76,7 +76,7 @@ def dev_detail(request, title):
     tag_list = Tag.objects.all()
     post_list = Post.objects.filter(title=title)
     post_list.update(views=F('views') + 1)
-    return render(request, "devlog_detail.html", {
+    return render(request, "dev_notes_detail.html", {
         'post_list': post_list,
         'tag_list': tag_list,
         "tag": cache.get("tag")

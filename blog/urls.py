@@ -7,10 +7,10 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('project/', views.project, name='project'),
-    path('devlog/', views.devlog, name='devlog'),
-    path('devlog/search', views.dev_search, name='dev-search'),
-    path('devlog/detail/<title>', views.dev_detail, name='dev-detail'),
-    path('devlog/<tag>/', views.tag_search, name='tag-search')
+    path('dev-notes/', views.dev_notes, name='dev-notes'),
+    path('dev-notes/search', views.dev_search, name='dev-search'),
+    path('dev-notes/detail/<title>', views.dev_detail, name='dev-detail'),
+    path('dev-notes/<tag>/', views.tag_search, name='tag-search')
 
     # path('test/', views.test)
 ]
