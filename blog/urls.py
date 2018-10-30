@@ -1,5 +1,4 @@
 from django.urls import path, re_path
-from django.shortcuts import redirect
 from blog import views
 
 
@@ -14,8 +13,5 @@ urlpatterns = [
     path('dev-notes/detail/<title>', views.dev_detail, name='dev-detail'),
     path('dev-notes/<tag>/', views.tag_search, name='tag-search'),
 
-    # attacker redirect
-    path('wp-content/', lambda request: redirect('blog:dev-notes')),
-    re_path(r'^.*\.php/$', lambda request: redirect('blog:dev-notes')),
     # path('test/', views.test)
 ]
