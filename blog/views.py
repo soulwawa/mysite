@@ -32,7 +32,7 @@ def dev_notes(request):
     post_list = Post.objects.all()
     tag_list = Tag.objects.all()
     page = request.GET.get('page', 1)
-    paginator = Paginator(post_list, 4)
+    paginator = Paginator(post_list, 8)
 
     # Paginator
     try:
