@@ -9,144 +9,30 @@
 
 {% block content %}
   <!-- About -->
-  <div class="row services-content">
+  {% for data in about %}
+    <div class="row services-content">
     <div class="col-md-4">
       <div class="service-header">
         <div class="icon-holder">
-          <img src="{% static 'image/noun_Information_753148.png' %}" alt="about" class="icon">
+          <img src="{% static data.image %}" alt="about" class="icon">
         </div>
-        <h4 class="heading">About</h4>
+        <h4 class="heading">{{ data.title }}</h4>
       </div>
     </div>
     <div class="col-md-8">
-      <div class="service-content">
+    <div class="service-content">
+      {% for key, value in data.Data.items %}
         <div class="row">
           <div class="col-md-6">
-            <p class="text-center description"><strong>NAME</strong></p>
+            <p class="text-center description"><strong>{{ key }}</strong></p>
           </div>
           <div class="col-md-6">
-            <p class="text-center-mobile description">Ko Seok Man</p>
+            <p class="text-center-mobile description">{{ value }}</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>JOB</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">Developer</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Major Skills</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">Python, Django</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Secondary Skills</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">HTML, CSS, Javascript, SQL, NoSQL</p>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-  </div>
-  <!-- Career -->
-  <div class="row services-content">
-    <div class="col-md-4">
-      <div class="service-header">
-        <div class="icon-holder">
-          <img src="{% static 'image/noun_web developer_1873915.png' %}" alt="Career" class="icon">
-        </div>
-        <h4 class="heading">Career</h4>
-      </div>
     </div>
-    <div class="col-md-8">
-      <div class="service-content">
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Agency</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">Dplatform, Korea</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Period</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">18.06 ~ </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Position</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">Python Developer</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Skill</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">Python, Django, PostgreSQL, MongoDB, Neo4j</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-   <!-- Education -->
-  <div class="row services-content">
-    <div class="col-md-4">
-      <div class="service-header">
-        <div class="icon-holder">
-          <img src="{% static 'image/noun_education_1724973.png' %}" alt="education" class="icon">
-        </div>
-        <h4 class="heading">Education</h4>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="service-content">
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Educational Facilities</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">KPC, Korea</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Period</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">17.12 ~ 18.04</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Title</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">IoT Developer Process</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-center description"><strong>Contents</strong></p>
-          </div>
-          <div class="col-md-6">
-            <p class="text-center-mobile description">Java, Python, Android, Sql</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 {% endblock %}

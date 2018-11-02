@@ -3,6 +3,7 @@ from django.db.models import Q, F
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
 from django.core.cache import cache
+from blog.data.about import about_data
 
 
 def index(request):
@@ -16,6 +17,7 @@ def index(request):
 
 def about(request):
     return render(request, "about.html", {
+        "about": about_data,
         "tag": cache.get("tag")
     })
 
