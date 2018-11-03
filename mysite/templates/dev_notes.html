@@ -48,31 +48,33 @@
   <hr>
   <!-- Blog Contents -->
   <div class="col-md-12">
-    <div class="col-md-8 log-left infinite-container">
-      {% for post in post_pages %}
-        <div class="list-group infinite-item">
-          <a href="{% url 'blog:dev-detail' post.title %}" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex">
-              <div class="icon-holder col-md-2">
-                <i class="{{ post.tag_set.first.name_url }}"></i>
+    {% block note_contents %}
+      <div class="col-md-8 log-left infinite-container">
+        {% for post in post_pages %}
+          <div class="list-group infinite-item">
+            <a href="{% url 'blog:dev-detail' post.title %}" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex">
+                <div class="icon-holder col-md-2">
+                  <i class="{{ post.tag_set.first.name_url }}"></i>
+                </div>
+                <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
+                <h5 class="mb-1">{{ post.title }}</h5>
+                <small>{{ post.updated_at|date:"SHORT_DATE_FORMAT"}}</small>
               </div>
-              <small class="text-center">{{ post.tag_set.all|join:", "}}</small>
-              <h5 class="mb-1">{{ post.title }}</h5>
-              <small>{{ post.updated_at|date:"SHORT_DATE_FORMAT"}}</small>
-            </div>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-    <div class="col-md-3 col-md-offset-1">
-      <ul class="list-group list-group-flush">
-        {% for tag in tag_list %}
-          <a href="{% url 'blog:tag-search' tag.name %}" class="list-group-item">{{ tag.name }}</a>
+            </a>
+          </div>
         {% endfor %}
-      </ul>
-    </div>
-  </div>
-  {% if post_pages.has_next %}
-    <a class="infinite-more-link" href="?page={{ post_pages.next_page_number }}"></a>
-  {% endif %}
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <ul class="list-group list-group-flush">
+          {% for tag in tag_list %}
+            <a href="{% url 'blog:tag-search' tag.name %}" class="list-group-item">{{ tag.name }}</a>
+          {% endfor %}
+        </ul>
+      </div>
+      </div>
+      {% if post_pages.has_next %}
+        <a class="infinite-more-link" href="?page={{ post_pages.next_page_number }}"></a>
+      {% endif %}
+    {% endblock %}
 {% endblock %}

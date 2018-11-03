@@ -1,77 +1,59 @@
-{% extends 'base.html' %}
+{% extends 'dev_notes.html' %}
 {% load static %}
 {% load martortags %}
 {% block title %}
   - {{ post_list.first.title }}
 {% endblock %}
-{% block home_button %}
-  <div class="col-md-12"> <a href="{% url 'blog:index' %}" class="btn btn-sm animated-button thar-three">3e HOME &nbsp;<i class="fas fa-undo-alt"></i></a> </div>
-{% endblock %}
 
-{% block content %}
-  <!-- Search -->
-  <div class="row services-content">
-    <div class="col-md-2">
-      <div class="service-header service-header-log">
-        <div class="icon-holder">
-          <img src="{% static 'image/noun_note_1470872.png' %}" alt="log" class="icon">
+{% block note_contents %}
+  <div class="row">
+    {% for post in post_list %}
+      <div class="post">
+        {% if post.updated_at %}
+          <div class="date">
+            {{ post.updated_at|date:"SHORT_DATE_FORMAT"}}
+          </div>
+        {% endif %}
+        <p>{{ post.contents | safe_markdown}}</p>
+      </div>
+    {% endfor %}
+  </div>
+  <br>
+  <hr>
+  <br>
+  <div class="row">
+    {% for rpost in related_post %}
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Related Contents</h5>
+          <p class="card-text">{{ rpost.title}}</p>
+          <a href="{% url 'blog:dev-detail' rpost.title %}" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
-    <div class="col-md-10">
-      <div class="service-content service-content-log">
-        <form action="{% url 'blog:dev-search' %}" method="get">
-        <span class="input input--3e col-md-12">
-					<input class="input__field input__field--3e" type="text" id="input-log" name="search">
-					<label class="input__label input__label--3e" for="input-log">
-						<span lang="en" class="input__label-content input__label-content--3e" id="full-text">Search Here - Dev notes are incorrect answer notes for studying development. </span>
-            <span lang="en" class="input__label-content input__label-content--3e" id="short-text">Search Dev Log</span>
-					</label>
-				</span>
-          </form>
-      </div>
-    </div>
+    {% endfor %}
   </div>
+  <br>
   <hr>
-  <!-- Blog Contents -->
-  <div class="col-md-12">
-  <div class="col-md-8 log-left">
-    {% for post in post_list %}
-    <div class="post">
-      {% if post.updated_at %}
-      <div class="date">
-        {{ post.updated_at|date:"SHORT_DATE_FORMAT"}}
-      </div>
-      {% endif %}
-        <p>{{ post.contents | safe_markdown}}</p>
-    </div>
-  {% endfor %}
-   </div>
-    <div class="col-md-3 col-md-offset-1">
-      <ul class="list-group list-group-flush">
-        {% for tag in tag_list %}
-          <a href="{% url 'blog:tag-search' tag.name %}" class="list-group-item">{{ tag.name }}</a>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
+  <br>
   <div id="disqus_thread"></div>
-<script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://mysite-yhvszvtzvh.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mysite-yhvszvtzvh.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endblock %}

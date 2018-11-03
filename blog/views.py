@@ -75,13 +75,14 @@ def tag_search(request, tag):
 
 
 def dev_detail(request, title):
-    tag_list = Tag.objects.all()
     post_list = Post.objects.filter(title=title)
+    post_tag = post_list[0].tag_set.all()[0]
+    related_post = Post.objects.filter(tag_set=post_tag).order_by('views')[:2]
     post_list.update(views=F('views') + 1)
     return render(request, "dev_notes_detail.html", {
         'post_list': post_list,
-        'tag_list': tag_list,
-        "tag": cache.get("tag")
+        "tag": cache.get("tag"),
+        "related_post": related_post
     })
 
 
