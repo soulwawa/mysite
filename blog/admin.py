@@ -13,6 +13,7 @@ class PostAdmin(admin.ModelAdmin):
     }
     exclude = ('views', )
     list_display = ['title', 'short_contents', 'get_tag_set', 'created_at', 'is_published']
+    list_per_page = 10
 
     def short_contents(self, item):
         return item.contents[:20]
