@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q, F
+from django.db.models.aggregates import Count
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
 from django.core.cache import cache
@@ -84,6 +85,19 @@ def dev_detail(request, title):
         "tag": cache.get("tag"),
         "related_post": related_post
     })
+
+
+def random_post(request):
+    max_id = Post.objects.aggregate(max_id=Count('idx'))['max_id']
+    import random
+    while True:
+        pk = random.randint(1, max_id)
+        post_list = Post.objects.filter(idx=pk)
+        if post_list:
+            title = post_list[0].title
+            return redirect('blog:dev-detail', title)
+        else:
+            pass
 
 
 def test(request):

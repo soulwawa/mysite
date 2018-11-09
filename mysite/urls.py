@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
-
+from blog.views import random_post
 
 urlpatterns = [
     path('admin-soulwawa-starbear85/', admin.site.urls),
@@ -17,10 +17,10 @@ urlpatterns = [
     path('favicon.ico/', RedirectView.as_view(url=staticfiles_storage.url('image/favicon.png'))),
 
     # attacker redirect
-    path('wp-content/', lambda request: redirect('blog:dev-notes')),
-    path('assets/', lambda request: redirect('blog:dev-notes')),
-    re_path(r'^.*\.php/$', lambda request: redirect('blog:dev-notes')),
-
+    re_path(r'^wp-content/', random_post, name='random_post'),
+    re_path(r'^assets/', random_post, name='random_post'),
+    re_path(r'^jm-ajax/upload_file', random_post, name='random_post'),
+    re_path(r'^.*\.php/$', random_post, name='random_post'),
 ]
 
 if settings.DEBUG:
