@@ -195,6 +195,13 @@ CSRF_COOKIE_HTTPONLY = False
 
 INTERNAL_IPS = '127.0.0.1'
 
+
+def skip_static_requests(record):
+    if record.args[0].startswith('GET /static/'):  # filter whatever you want
+        return False
+    return True
+
+
 # LOGGING
 LOGGING = {
     'version': 1,
@@ -206,6 +213,11 @@ LOGGING = {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
         },
+        # use Django's built in CallbackFilter to point to your filter
+        'skip_static_requests': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': skip_static_requests
+        }
     },
     'formatters': {
         'django.server': {
@@ -218,7 +230,7 @@ LOGGING = {
     'handlers': {
         'console': {
             'level': 'INFO',
-            'filters': ['require_debug_true'],
+            'filters': ['require_debug_true', 'skip_static_requests'],
             'class': 'logging.StreamHandler',
         },
         'django.server': {

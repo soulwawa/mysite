@@ -21,6 +21,9 @@ urlpatterns = [
     re_path(r'^assets/', random_post, name='random_post'),
     re_path(r'^jm-ajax/upload_file', random_post, name='random_post'),
     re_path(r'^.*\.php/$', random_post, name='random_post'),
+    path('css/', random_post, name='random_post'),
+    path('js/', random_post, name='random_post'),
+    path('user/', random_post, name='random_post'),
 ]
 
 if settings.DEBUG:
