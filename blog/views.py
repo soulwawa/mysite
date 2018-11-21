@@ -77,8 +77,8 @@ def tag_search(request, tag):
 
 def dev_detail(request, title):
     # exception
-    # https://www.3es.me/
-    if title == 'python-celery-SyntaxError-%20invalid-syntax':
+    # https://www.3es.me/dev-notes/detail/python-celery-SyntaxError-%20invalid-syntax
+    if title == 'python-celery-SyntaxError- invalid-syntax':
         title = 'python-celery-SyntaxError-invalid-syntax'
     else:
         pass
