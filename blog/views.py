@@ -76,6 +76,13 @@ def tag_search(request, tag):
 
 
 def dev_detail(request, title):
+    # exception
+    # https://www.3es.me/
+    if title == 'python-celery-SyntaxError-%20invalid-syntax':
+        title = 'python-celery-SyntaxError-invalid-syntax'
+    else:
+        pass
+
     post_list = Post.objects.filter(title=title)
     post_tag = post_list[0].tag_set.all()[0]
     related_post = Post.objects.filter(tag_set=post_tag).order_by('views')[:2]
