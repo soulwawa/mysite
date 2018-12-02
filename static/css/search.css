@@ -24,7 +24,7 @@
 	background: transparent;
 	color: #aaa;
 	font-weight: bold;
-	font-family: "Audiowide", sans-serif;
+	font-family: sans-serif;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }
 
