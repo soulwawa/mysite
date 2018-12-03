@@ -55,6 +55,12 @@ def dev_search(request):
     tag_list = Tag.objects.all()
     if request.GET.get("search") != "":
         request_value = request.GET.get("search")
+        # &nbsp Exception
+        if " " in request_value:
+            request_value = request_value.replace(" ", "")
+        else:
+            pass
+
         post_pages = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
         return render(request, "dev_notes.html", {
             'post_pages': post_pages,
@@ -76,10 +82,9 @@ def tag_search(request, tag):
 
 
 def dev_detail(request, title):
-    # exception
-    # https://www.3es.me/dev-notes/detail/python-celery-SyntaxError-%20invalid-syntax
-    if title == 'python-celery-SyntaxError- invalid-syntax':
-        title = 'python-celery-SyntaxError-invalid-syntax'
+    # &nbsp Exception
+    if " " in title:
+        title = title.replace(" ", "")
     else:
         pass
 
