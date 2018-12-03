@@ -11,6 +11,7 @@ urlpatterns = [
     path('dev-notes/', views.dev_notes, name='dev-notes'),
     path('dev-notes/search', views.dev_search, name='dev-search'),
     path('dev-notes/detail/<title>', views.dev_detail, name='dev-detail'),
+    path('devlog/detail/<title>', views.dev_detail_temp, name='dev-detail-temp'),
     path('dev-notes/<tag>/', views.tag_search, name='tag-search'),
     # path('test/', views.test)
 ]

@@ -99,6 +99,10 @@ def dev_detail(request, title):
     })
 
 
+def dev_detail_temp(request, title):
+    return redirect("blog:dev-detail", title)
+
+
 def random_post(request):
     max_id = Post.objects.aggregate(max_id=Count('idx'))['max_id']
     import random
