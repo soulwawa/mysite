@@ -15,12 +15,12 @@ about_data = [
             "Period": "2018.06 ~ ",
             "Position": "Python Developer",
             "SKill": "Python, Django, PostgreSQL, MongoDB, Neo4j"}},
-    {
-        "title": "Education",
-        "image": "image/noun_education_1724973.png",
-        "Data": {
-            "Educational Facilities": "KPC, Korea",
-            "Period": "17.12 ~ 18.04",
-            "Title": "IoT Developer Process",
-            "Skill": "Java(SpringBoot), Python, Android, Mysql"}}
+    # {
+    #     "title": "Education",
+    #     "image": "image/noun_education_1724973.png",
+    #     "Data": {
+    #         "Educational Facilities": "KPC, Korea",
+    #         "Period": "17.12 ~ 18.04",
+    #         "Title": "IoT Developer Process",
+    #         "Skill": "Java(SpringBoot), Python, Android, Mysql"}}
 ]

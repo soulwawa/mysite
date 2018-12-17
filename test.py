@@ -1,9 +1,9 @@
-import requests
+import traceback
+import sys
 
-url = "https://api.imgur.com/3/account/{{username}}"
-
-headers = {'Authorization': 'Client-ID {{soulwawa}}'}
-
-response = requests.request("GET", url, headers=headers)
-
-print(response.text)
+try:
+    do_something()
+except Exception:
+    print(traceback.format_exc())
+    traceback.print_exc()
+    # traceback.print_stack()
