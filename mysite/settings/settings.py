@@ -236,6 +236,7 @@ LOGGING = {
         'django.server': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
+            'filters': ['skip_static_requests'],
             'formatter': 'django.server',
         },
         'mail_admins': {
