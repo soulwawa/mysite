@@ -1,84 +1,73 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="kr">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>3e's Blog{% block title %}{% endblock %}</title>
-  <meta name="description" content="3e(soulwawa) blog page" />
-  <meta name="keywords" content="portfolio, blog, dev note" />
+
+  <!-- TODO meta tags study! -->
+  <meta name="description" content="3e(soulwawa) blog, resume, project, portfolio page" />
+  <meta name="keywords" content="portfolio, blog, dev note, resume" />
   <meta name="keywords" content="{{ tag }}"/>
   <meta name="author" content="soulwawa, 3e" />
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <!-- mysite style -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/search.css' %}">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-  {#  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"#}
-  {#      rel="stylesheet">#}
+  <!--favicon-->
   <link rel="shortcut icon" type="image/png" href="{% static 'image/favicon.png' %}"/>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131636335-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'UA-131636335-1');
-  </script>
+  <!--My Style Sheets-->
+
+  <!-- TODO delpoy setting -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  {#  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131636335-1"></script>#}
+  {#  <script>#}
+  {#    window.dataLayer = window.dataLayer || [];#}
+  {#    function gtag(){dataLayer.push(arguments);}#}
+  {#    gtag('js', new Date());#}
+  {##}
+  {#    gtag('config', 'UA-131636335-1');#}
+  {#  </script>#}
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static '/css/mysite.css' %}">
+  <link rel="stylesheet" href="{% static '/css/media-queries.css' %}">
+  {% block stylesheet %}
+  {% endblock %}
+  <!--[if lt IE 11]>
+	  <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <script type='text/javascript' src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    	  <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <![endif]-->
 </head>
+<!-- Header -->
+<header>
+  <nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+    <ul id="nav" class="nav">
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- Header End -->
+{% block contents %}
+{% endblock %}
+
 
 <body>
-<section id="services" class="section">
-  <div class="container">
-    <div class="row text-center title">
-      {% block home_button %}
-        {#      <h4 class="light muted"></h4>#}
-      {% endblock %}
-    </div>
-    {% block content %}
-
-    {% endblock %}
-    {% block scroll %}
-      <div class="scroll-container">
-        <div class="scroll"></div>
-      </div>
-    {% endblock %}
-  </div>
-</section>
-<footer>
-  <div class="container">
-    <div class="row text-center-mobile">
-      <div class="col-sm-8">
-        <p lang="en">Copyright 2018. 3e All rights reserved</p>
-      </div>
-      <div class="col-sm-4 text-right text-center-mobile">
-        <ul class="social-footer">
-          <li><a href="mailto:soulwawa85@gmail.com"><i class="fas fa-envelope-open"></i></a></li>
-          <li><a href="https://www.facebook.com/soulwawa"><i class="fab fa-facebook-square"></i></a></li>
-          <li><a href="https://github.com/soulwawa"><i class="fab fa-github"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- go to Top -->
-<button onclick="goTopFunction()" id ="myBtnTop" title="Go to Top"><i class="fas fa-chevron-circle-up"></i></button>
-<!-- Bootstrap core JavaScript================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+<!-- Jquery -->
 <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/jquery.waypoints.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/infinite.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
-<script type="text/javascript" src="{% static "js/mysite.js" %}"></script>
-{% block javascript %}{% endblock %}
+<!-- My Javascript -->
+{% block javascript %}
+{% endblock %}
 </body>
-
 </html>
