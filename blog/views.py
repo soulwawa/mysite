@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render, redirect
 from django.db.models import Q, F
 from django.db.models.aggregates import Count
@@ -89,7 +90,11 @@ def dev_detail(request, title):
         pass
 
     post_list = Post.objects.filter(title=title)
-    post_tag = post_list[0].tag_set.all()[0]
+    try:
+        post_tag = post_list[0].tag_set.all()[0]
+    except IndexError:
+        raise Http404
+
     related_post = Post.objects.filter(tag_set=post_tag).order_by('views')[:2]
     post_list.update(views=F('views') + 1)
     return render(request, "dev_notes_detail.html", {
