@@ -6,17 +6,15 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
 from django.core.cache import cache
 from blog.data.about import about_data
-from mysite.settings.settings import DEBUG
+
 
 def index(request):
     tag_list = Tag.objects.all()
     tag = ", ".join([i.name for i in tag_list])
     # TODO APP 스타트로 이동
     cache.set("tag", tag, timeout=None)
-    debug_mode = DEBUG
     return render(request, "index.html", {
         "tag": cache.get("tag"),
-        'debug': debug_mode
     })
 
 
