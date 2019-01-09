@@ -40,10 +40,10 @@
     <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
     <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
     <ul id="nav" class="nav">
-      <li><a href="">Home</a></li>
-      <li><a href="">ABOUT</a></li>
-      <li><a href="">PROJECT</a></li>
-      <li><a href="">BLOG</a></li>
+      <li><a href="{% url 'blog:index' %}">Home</a></li>
+      <li><a href="{% url 'blog:about' %}">ABOUT</a></li>
+      <li><a href="{% url 'blog:project' %}">PROJECT</a></li>
+      <li><a href="{% url 'blog:dev-notes' %}">BLOG</a></li>
     </ul>
   </nav>
 </header>

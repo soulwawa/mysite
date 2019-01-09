@@ -1,4 +1,4 @@
-html {
+body {
   height: 100%;
   background: #FEAC5E;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 );  /* Chrome 10-25, Safari 5.1-6 */
