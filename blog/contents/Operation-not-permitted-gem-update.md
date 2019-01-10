@@ -4,17 +4,26 @@
 ```text
 sudo gem update --system
 
-#Error
+# Error
 Updating rubygems-update
 ERROR:  While executing gem ... (Errno::EPERM)
 Operation not permitted - /usr/bin/update_rubygems
+
+# Error
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
 ```
-#### Solved
+#### Solved 1
 ```text
 # Install homebrew
 http://brew.sh
 
 brew install ruby
+```
+
+#### Solved 2
+```text
+gem install mygem --user-install
 ```
 
 
