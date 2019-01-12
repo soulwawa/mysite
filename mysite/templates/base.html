@@ -51,11 +51,18 @@
 {% block contents %}
 {% endblock %}
 
-
+{% block footer%}
+  <footer>
+    <div>
+      <p>Copyright 2018-2019. 3e All rights reserved.</p>
+    </div>
+  </footer>
+{% endblock %}
 <body>
 <!-- Jquery -->
 <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
 <!-- My Javascript -->
+<script type="text/javascript" src="{% static "js/mysite.js" %}"></script>
 {% block javascript %}
 {% endblock %}
 </body>

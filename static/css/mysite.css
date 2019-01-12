@@ -1,12 +1,14 @@
-body {
-  height: 100%;
+html {
   background: #FEAC5E;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 );  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 400;
+  font-family: 'Noto Sans KR', sans-serif !important;
+  font-weight: 400;
 }
-
+body {
+  font-family: 'Noto Sans KR', sans-serif !important;
+  font-weight: 400;
+}
 header {
   width: 100%;
   text-align: center;
@@ -93,18 +95,33 @@ ul#nav li a {
   border-color: rgba(150, 150, 150, .1);
 }
 
-/* header social links */
-#home .social {
+
+.social {
   margin: 24px 0;
   padding: 0;
   font-size: 30px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, .8);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .8);
 }
-#home .social li {
+.social li {
   display: inline-block;
   margin: 0 15px;
   padding: 0;
 }
-#home .social li a { color: #fff; }
-#home .social li a:hover { color: #11ABB0; }
+.social li a { color: #fff; }
+.social li a:hover { color: #11ABB0; }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer div {
+  text-align: center;
+}
+
+footer p {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
