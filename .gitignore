@@ -115,3 +115,5 @@ test\.py
 \.idea/inspectionProfiles/Project_Default\.xml
 
 \.idea/encodings\.xml
+
+\.idea/webResources\.xml

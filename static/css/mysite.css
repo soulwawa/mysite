@@ -5,10 +5,20 @@ html {
   font-family: 'Noto Sans KR', sans-serif !important;
   font-weight: 400;
 }
-body {
+
+body, h1, h2, h3, h4, h5, h6, span, p {
   font-family: 'Noto Sans KR', sans-serif !important;
   font-weight: 400;
 }
+
+h1, h2 {
+  font-weight: 900 !important;
+}
+
+h5 {
+  font-weight: 700 !important;
+}
+
 header {
   width: 100%;
   text-align: center;
@@ -125,3 +135,35 @@ footer p {
   font-weight: bold;
   letter-spacing: 2px;
 }
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills ul li {
+  background: transparent;
+  display: inline;
+  list-style: none;
+  margin: 0 1rem 0 1rem;
+  padding: 0;
+  text-align: center;
+}
+
+.inner-skills {
+  display: table-cell;
+  position: relative;
+}
+
+.inner-skills img{
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.skills ul li span:nth-child(2) {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+}
+
