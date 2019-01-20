@@ -25,7 +25,6 @@ def about(request):
 
 
 def project(request):
-
     return render(request, "blog/project.html", {
         "tag": cache.get("tag"),
         'project_data': project_data,
