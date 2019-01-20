@@ -5,6 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
 from django.core.cache import cache
 from blog.data.about import about_data
+from blog.data.project import project_data
 
 
 def index(request):
@@ -24,8 +25,10 @@ def about(request):
 
 
 def project(request):
+
     return render(request, "blog/project.html", {
-        "tag": cache.get("tag")
+        "tag": cache.get("tag"),
+        'project_data': project_data,
     })
 
 

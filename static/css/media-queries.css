@@ -25,7 +25,8 @@
     font: 17px/1.9em serif;
     width: 80%;
   }
-  #home .banner-text hr {
+  #home .banner-text hr,
+  #portfolio hr {
     width: 65%;
     margin: 12px auto;
   }
@@ -33,6 +34,11 @@
   #nav-wrap {
     font: 11px  sans-serif;
     letter-spacing: 2px;
+  }
+  #portfolio h3,
+  #portfolio h5,
+  #portfolio p {
+    font-size: 0.5rem;
   }
 }
 
