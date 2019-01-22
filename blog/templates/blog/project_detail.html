@@ -10,9 +10,6 @@
     .w3-margin-top {
       margin-top: 50px !important;
     }
-  #portfolio > div > div.w3-row:after {
-    clear: none;
-  }
   </style>
 {% endblock %}
 
@@ -23,9 +20,9 @@
     <div class="w3-content" style="max-width:1400px">
 
       <!-- Header -->
-      <div class="w3-container w3-center w3-padding-48">
+      <header class="w3-container w3-center w3-padding-48">
         <h1 class="w3-text-white"><b>My Project, Portfolio</b></h1>
-      </div>
+      </header>
 
       <!-- Grid -->
       <div class="w3-row">
@@ -41,8 +38,9 @@
                   <h3><b>{{ project.title }}</b></h3>
                   <h5>{{ project.summary }}, <span class="w3-opacity">{{ project.period }}</span></h5>
                   <p>
-                    <a href="{% url 'blog:project-detail' project.image %}" class="w3-button w3-padding-large w3-border"><b>READ MORE »</b></a>
+                    <a href="{{ project.read_more }}" class="w3-button w3-padding-large w3-border"><b>READ MORE »</b></a>
                     {% if project.add_more %}
+                      &nbsp;&nbsp;
                       <a href="{{ project.add_more }}" class="w3-button w3-padding-large w3-border"><b>READ MORE THAN »</b></a>
                     {% endif %}
                   </p>

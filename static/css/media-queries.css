@@ -40,6 +40,9 @@
   #portfolio p {
     font-size: 0.5rem;
   }
+  footer div p {
+    font-size: 10px;
+  }
 }
 
 /* mobile wide/smaller tablets  */

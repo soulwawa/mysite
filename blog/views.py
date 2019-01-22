@@ -31,6 +31,14 @@ def project(request):
     })
 
 
+def project_detail(request, title):
+    print(title)
+
+    return render(request, "blog/project_detail.html", {
+        "tag": cache.get("tag"),
+    })
+
+
 def dev_notes(request):
     post_list = Post.objects.all()
     tag_list = Tag.objects.all()
