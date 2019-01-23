@@ -75,7 +75,8 @@ ul#nav li a {
 }
 
 #home .banner-text {width: 100%;}
-#home .banner-text h1 {
+#home .banner-text h1,
+#portfolio h1 {
   font: 90px/1.1em 'Noto Sans KR', sans-serif;
   color: white;
   letter-spacing: -2px;
@@ -190,4 +191,8 @@ footer p {
 .image-text {
   background: rgb(54, 25, 25);
   color: white;
+}
+
+.project-header {
+  padding-top: 48px !important;
 }
