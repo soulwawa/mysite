@@ -35,36 +35,51 @@
           <!-- Blog entry -->
           {% for project in project_data %}
             <div style="cursor: pointer" class="w3-card-4 w3-margin w3-display-container">
-            <img class="w3-hover-opacity" src="{% static 'image/project/' %}{{ project.image }}.png" alt="" style="width:100%">
-            <div class="image-middle">
-              <div class="w3-container image-text">
-                <h3><b>{{ project.title }}</b></h3>
-                <h5>{{ project.summary }}, <span class="w3-opacity">{{ project.period }}</span></h5>
-                <p>
-                  <a href="" class="w3-button w3-padding-large w3-border"><b>READ MORE »</b></a>
-                  &nbsp;&nbsp;&nbsp;
-                  {% if project.read_more %}
-                    <a href="{{ project.read_more }}" class="w3-button w3-padding-large w3-border"><b>READ MORE THAN »</b></a>
-                  {% endif %}
-                </p>
+              <img class="w3-hover-opacity" src="{% static 'image/project/' %}{{ project.image }}.png" alt="" style="width:100%">
+              <div class="image-middle">
+                <div class="w3-container image-text">
+                  <h3><b>{{ project.title }}</b></h3>
+                  <p>
+                    <button class="w3-button w3-padding-large w3-border" onclick="showText('{{ project.image }}')"><b>READ MORE »</b></button>
+                    &nbsp;&nbsp;&nbsp;
+                    {% if project.read_more %}
+                      <a href="{{ project.read_more }}" class="w3-button w3-padding-large w3-border"><b>Demo More »</b></a>
+                    {% endif %}
+                  </p>
+                </div>
               </div>
             </div>
-            <!-- TODO 아코디언 추가 -->
-              <div class="w3-container w3-hide">
-                <h3><b>TITLE HEADING</b></h3>
-                <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
-                <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-                  tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-              </div>
+            <div class="w3-container w3-hide" id="{{ project.image }}">
+              <h3><b>{{ project.title }}</b></h3>
+              <h5>{{ project.summary }}, <span class="w3-opacity">{{ project.period }}</span></h5>
+              <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
+                tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
             </div>
             <hr>
           {% endfor %}
+          <br>
+          <br>
           <!-- END BLOG ENTRIES -->
-          </div>
-          <!-- END GRID -->
-        </div><br>
+        </div>
+        <!-- END GRID -->
+      </div><br>
 
-        <!-- END w3-content -->
-      </div>
+      <!-- END w3-content -->
+    </div>
   </section>
+{% endblock %}
+
+{% block javascript %}
+  <script type="text/javascript">
+    function showText(id) {
+      var showId = document.getElementById(id);
+      if (showId.className.indexOf('w3-show') === -1){
+        showId.className += ' w3-show';
+        window.scrollBy(0,100)
+      }else {
+        showId.className = showId.className.replace(' w3-show', '')
+        window.scrollBy(0,-100)
+      }
+    }
+  </script>
 {% endblock %}
