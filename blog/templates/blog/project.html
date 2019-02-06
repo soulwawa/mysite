@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block stylesheet %}
-  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+
   <style>
     .w3-margin-top {
       margin-top: 50px !important;
@@ -18,14 +18,13 @@
 
 {% block contents %}
   <section id="portfolio">
+     <!-- Header -->
+      <div class="w3-container w3-center project-header">
+        <h1>Project, My Portfolio</h1>
+      </div>
 
     <!-- Page Container -->
-    <div class="w3-content" style="max-width:1400px">
-
-      <!-- Header -->
-      <div class="w3-container w3-center project-header">
-        <h1>My Project, Portfolio</h1>
-      </div>
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
       <!-- Grid -->
       <div class="w3-row">
@@ -42,18 +41,18 @@
                   <p>
                     <button class="w3-button w3-padding-large w3-border" onclick="showText('{{ project.image }}')"><b>READ MORE »</b></button>
                     &nbsp;&nbsp;&nbsp;
-                    {% if project.read_more %}
-                      <a href="{{ project.read_more }}" class="w3-button w3-padding-large w3-border"><b>Demo More »</b></a>
+                    {% if project.demo %}
+                      <a href="{{ project.demo }}" class="w3-button w3-padding-large w3-border"><b>Demo More »</b></a>
                     {% endif %}
                   </p>
                 </div>
               </div>
             </div>
-            <div class="w3-container w3-hide" id="{{ project.image }}">
-              <h3><b>{{ project.title }}</b></h3>
-              <h5>{{ project.summary }}, <span class="w3-opacity">{{ project.period }}</span></h5>
-              <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-                tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+            <div class="w3-container w3-hide w3-text-white" id="{{ project.image }}">
+              <h3><b>TITLE: {{ project.title }}</b>, <span class="w3-opacity">{{ project.period }}</span></h3>
+              <h5>SUMMARY: {{ project.summary }}</h5>
+              <h5>ROLE: {{ project.role }}</h5>
+              <h5>SKILLS: {{ project.skills }}</h5>
             </div>
             <hr>
           {% endfor %}

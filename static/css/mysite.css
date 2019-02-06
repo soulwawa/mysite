@@ -75,8 +75,7 @@ ul#nav li a {
 }
 
 #home .banner-text {width: 100%;}
-#home .banner-text h1,
-#portfolio h1 {
+#home .banner-text h1 {
   font: 90px/1.1em 'Noto Sans KR', sans-serif;
   color: white;
   letter-spacing: -2px;
@@ -84,6 +83,17 @@ ul#nav li a {
   text-shadow: 0 1px 3px rgba(0, 0, 0, .8);
   font-weight: 900;
 }
+
+#about h1,
+#portfolio h1 {
+  font: 80px/1.1em 'Noto Sans KR', sans-serif;
+  color: white;
+  letter-spacing: 5px;
+  margin: 0 auto 18px auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .8);
+  font-weight: 900;
+}
+
 #home .banner-text h3 {
   font: 18px/1.9em 'Noto Sans KR', sans-serif;
   color: black;

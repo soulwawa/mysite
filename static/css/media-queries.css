@@ -17,7 +17,9 @@
   /* header styles
    ------------------------------------------------------------------ */
   #home .banner { padding-bottom: 12px; }
-  #home .banner-text h1 {
+  #home .banner-text h1,
+  #about h1,
+  #portfolio h1 {
     font: 78px/1.1em sans-serif;
     letter-spacing: -1px;
   }
@@ -139,7 +141,11 @@
     padding-bottom: 12px;
     padding-top: 6px;
   }
-  #home .banner-text h1 { font: 68px/1.1em 'Noto Sans KR', sans-serif; }
+  #home .banner-text h1,
+  #about h1,
+  #portfolio h1 {
+    font: 68px/1.1em 'Noto Sans KR', sans-serif;
+  }
   #home .banner-text h3 {
     font: 16px/1.9em 'Noto Sans KR', sans-serif;
     width: 85%;
@@ -165,7 +171,9 @@
   /* header styles
    -------------------------------------------------------------------- */
   #home .banner { padding-top: 24px; }
-  #home .banner-text h1 {
+  #home .banner-text h1,
+   #about h1,
+  #portfolio h1 {
     font: 40px/1.1em 'Noto Sans KR', sans-serif;
     margin: 0 auto 24px auto;
   }
