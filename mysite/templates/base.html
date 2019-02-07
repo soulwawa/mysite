@@ -11,7 +11,8 @@
   <!-- TODO meta tags study! -->
   <meta name="description" content="3e(soulwawa) blog, resume, project, portfolio page" />
   <meta name="keywords" content="portfolio, blog, dev note, resume" />
-  <meta name="keywords" content="{{ tag }}"/>
+  <!-- TODO keyword Add -->
+  <meta name="keywords" content=""/>
   <meta name="author" content="soulwawa, 3e" />
 
   <!--favicon-->
@@ -21,10 +22,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
-  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
-  <link rel="stylesheet" href="{% static '/css/mysite.css' %}">
-  <link rel="stylesheet" href="{% static '/css/media-queries.css' %}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mysite.css' %}">
+  <link rel="stylesheet" href="{% static 'css/media-queries.css' %}">
   {% block stylesheet %}
   {% endblock %}
   <!--[if lt IE 11]>
@@ -39,7 +39,7 @@
     <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
     <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
     <ul id="nav" class="nav">
-      <li><a href="{% url 'blog:index' %}">Home</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'about:about' %}">ABOUT</a></li>
       <li><a href="{% url 'project:project' %}">PROJECT</a></li>
       <li><a href="{% url 'blog:dev-notes' %}">BLOG</a></li>
@@ -56,10 +56,9 @@
   </div>
 </footer>
 <body>
-<!-- Jquery -->
-<script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
 <!-- My Javascript -->
 <script type="text/javascript" src="{% static "js/mysite.js" %}"></script>
+<!--TODO Google Anlytics 확인-->
 {% block javascript %}
 {% endblock %}
 </body>

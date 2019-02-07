@@ -1,8 +1,6 @@
+document.querySelector('section').style.height = window.innerHeight + 'px';
 
-$('section').css({ 'height': $(window).height() });
-$(window).on('resize', function() {
-
-  // $('header').css({ 'height': $(window).height() });
-  $('body').css({ 'width': $(window).width() });
-  $('section').css({ 'height': $(window).height() });
+window.addEventListener('resize', function () {
+  document.querySelector('body').style.width = window.innerWidth + 'px';
+  document.querySelector('section').style.height = window.innerHeight + 'px';
 });

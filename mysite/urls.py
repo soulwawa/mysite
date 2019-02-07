@@ -7,7 +7,7 @@ from django.views.generic.base import RedirectView
 from blog.views import random_post
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html')),
+    path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('about/', include("about.urls", namespace='about')),
     path('project/', include("project.urls", namespace='project')),
     path('blog/', include("blog.urls", namespace='blog')),
