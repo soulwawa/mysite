@@ -18,7 +18,7 @@ project_data = [
         'skills': 'Python-Django, MongoDB'
     },
     {
-        'title': 'Mysite, BLOG',
+        'title': 'RESUME, PORTFOLIO, BLOG',
         'summary': '3es HOME, BLOG SITE',
         'period': '2018.10 ~ ',
         'image': 'mysite',

@@ -5,8 +5,11 @@
 {% endblock %}
 
 {% block stylesheet %}
-
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
   <style>
+    html {
+      overflow: auto;
+    }
     .w3-margin-top {
       margin-top: 50px !important;
     }

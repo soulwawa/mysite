@@ -1,7 +1,8 @@
+/*TODO CSSS 정리*/
 html {
-  background: #FEAC5E;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 );  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*background: #FEAC5E;  !* fallback for old browsers *!*/
+  /*background: -webkit-linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 );  !* Chrome 10-25, Safari 5.1-6 *!*/
+  /*background: linear-gradient(to bottom, #FEAC5E,  #C779D0, #4BC0C8 ); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
   font-family: 'Noto Sans KR', sans-serif !important;
   font-weight: 400;
   min-height: 100%;
@@ -37,10 +38,6 @@ header {
 
 #nav-wrap ul {
   padding: 0;
-}
-
-#nav-wrap > a.mobile-btn {
-  display: none;
 }
 
 ul#nav li {
@@ -97,7 +94,7 @@ ul#nav li a {
 
 #home .banner-text h3 {
   font: 18px/1.9em 'Noto Sans KR', sans-serif;
-  color: black;
+  color: white;
   margin: 0 auto;
   width: 70%;
   font-weight: 700;
@@ -106,7 +103,9 @@ ul#nav li a {
 }
 #home .banner-text h3 span,
 #home .banner-text h3 a {
-  color: white;
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 1.2em;
 }
 #home .banner-text hr {
@@ -143,7 +142,7 @@ footer div {
 }
 
 footer p {
-  font-weight: bold;
+  color: white;
   letter-spacing: 2px;
 }
 

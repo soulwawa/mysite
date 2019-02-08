@@ -4,39 +4,6 @@ from django.db.models.aggregates import Count
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post, Tag
 from django.core.cache import cache
-from blog.data.about import about_data
-from blog.data.project import project_data
-
-
-def index(request):
-    tag_list = Tag.objects.all()
-    tag = ", ".join([i.name for i in tag_list])
-    cache.set("tag", tag, timeout=None)
-    return render(request, "blog/index.html", {
-        "tag": cache.get("tag")
-    })
-
-
-def about(request):
-    return render(request, "blog/about.html", {
-        "about": about_data,
-        "tag": cache.get("tag")
-    })
-
-
-def project(request):
-    return render(request, "blog/project.html", {
-        "tag": cache.get("tag"),
-        'project_data': project_data,
-    })
-
-
-def project_detail(request, title):
-    print(title)
-
-    return render(request, "blog/project_detail.html", {
-        "tag": cache.get("tag"),
-    })
 
 
 def dev_notes(request):
