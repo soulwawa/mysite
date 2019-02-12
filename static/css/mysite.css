@@ -82,9 +82,8 @@ ul#nav li a {
   font-weight: 900;
 }
 
-#about h1,
-#portfolio h1 {
-  font: 80px/1.1em 'Noto Sans KR', sans-serif;
+section h1 {
+  font: 50px/1.1em 'Noto Sans KR', sans-serif;
   color: white;
   letter-spacing: 5px;
   margin: 0 auto 18px auto;

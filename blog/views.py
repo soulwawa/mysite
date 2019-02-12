@@ -2,8 +2,14 @@ from django.shortcuts import render, redirect
 from django.db.models import Q, F
 from django.db.models.aggregates import Count
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import ListView
 from blog.models import Post, Tag
 from django.core.cache import cache
+
+
+class BlogIndex(ListView):
+    template_name = 'blog/blog_index.html'
+    model = Post
 
 
 def dev_notes(request):
@@ -20,10 +26,9 @@ def dev_notes(request):
     except EmptyPage:
         post_pages = paginator.page(paginator.num_pages)
     # print(post_pages.object_list)
-    return render(request, "blog/dev_notes.html", {
+    return render(request, "blog/dev_notes_temp.html", {
         'post_pages': post_pages,
         'tag_list': tag_list,
-        "tag": cache.get("tag")
         # 'numbers': numbers
     })
 
@@ -39,7 +44,7 @@ def dev_search(request):
             pass
 
         post_pages = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
-        return render(request, "blog/dev_notes.html", {
+        return render(request, "blog/dev_notes_temp.html", {
             'post_pages': post_pages,
             'tag_list': tag_list,
             "tag": cache.get("tag")
@@ -51,7 +56,7 @@ def dev_search(request):
 def tag_search(request, tag):
     tag_list = Tag.objects.all()
     post_pages = Post.objects.filter(tag_set__name__icontains=tag)
-    return render(request, "blog/dev_notes.html", {
+    return render(request, "blog/dev_notes_temp.html", {
         'post_pages': post_pages,
         'tag_list': tag_list,
         "tag": cache.get("tag")
@@ -69,7 +74,7 @@ def dev_detail(request, title):
     post_tag = post_list[0].tag_set.all()[0]
     related_post = Post.objects.filter(tag_set=post_tag).order_by('views')[:2]
     post_list.update(views=F('views') + 1)
-    return render(request, "blog/dev_notes_detail.html", {
+    return render(request, "blog/dev_notes_detail_temp.html", {
         'post_list': post_list,
         "tag": cache.get("tag"),
         "related_post": related_post

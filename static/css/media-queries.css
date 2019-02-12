@@ -72,6 +72,10 @@
 }
 /* mobile narrow */
 @media only screen and (max-width: 480px) {
+  /* header */
+  ul#nav li a {
+  padding: 10px 10px;
+}
   #home .banner { padding-top: 24px; }
   #home .banner-text h1,
    #about h1,
@@ -83,15 +87,4 @@
     font: 14px/1.9em 'Noto Sans KR', sans-serif;
     width: 90%;
   }
-
-  /* header social links */
-  header .social { font-size: 20px;}
-  header .social li { margin: 0 6px; }
-
-  /* footer
-  ------------------------------------------------------------------------ */
-
-  /* social links */
-  footer .social-links { font-size: 20px; }
-  footer .social-links li { margin-left: 14px; }
 }
