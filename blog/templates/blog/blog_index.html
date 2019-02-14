@@ -31,7 +31,7 @@
 
       <!-- Grid -->
       <div class="w3-row">
-        <div class="w3-col m9">
+        <div class="w3-col m9 infinite-container">
           <div class="w3-row-padding">
             <div class="w3-col m12">
               <div class="w3-card w3-round w3-white">
@@ -44,83 +44,50 @@
             </div>
           </div>
           {% for post in post_list %}
-          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-            <span class="w3-right w3-opacity">{{ post.updated_at }}</span>
-            <h4>{{ post.title }}</h4><br>
-            <p class="w3-text-gray">
-              {% for tag in post.tag_set.all %}
-                <a href="#" style="text-decoration: none">#{{ tag }}</a>
-              {% endfor %}
-            </p>
-          </div>
-        {% endfor %}
+            <div class="w3-container w3-card w3-white w3-round w3-margin infinite-item"><br>
+              <span class="w3-right w3-opacity">{{ post.updated_at }}</span>
+              <h4>{{ post.title }}</h4><br>
+              <p class="w3-text-gray">
+                {% for tag in post.tag_set.all %}
+                  <a href="#" style="text-decoration: none">#{{ tag }}</a>
+                {% endfor %}
+              </p>
+            </div>
+          {% endfor %}
         </div>
         <!-- Right Column -->
         <div class="w3-col m2">
           <div class="w3-card w3-round w3-white w3-center">
             <div class="w3-container">
-              <p>TAG</p>
+              <p>#TAG</p>
               <p>
-                <span class="w3-tag w3-small w3-theme-d5">News</span>
-                <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
-                <span class="w3-tag w3-small w3-theme-d3">Labels</span>
-                <span class="w3-tag w3-small w3-theme-d2">Games</span>
-                <span class="w3-tag w3-small w3-theme-d1">Friends</span>
-                <span class="w3-tag w3-small w3-theme">Games</span>
-                <span class="w3-tag w3-small w3-theme-l1">Friends</span>
-                <span class="w3-tag w3-small w3-theme-l2">Food</span>
-                <span class="w3-tag w3-small w3-theme-l3">Design</span>
-                <span class="w3-tag w3-small w3-theme-l4">Art</span>
-                <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+                {% for tag in tag_list %}
+                  <span class="w3-tag w3-large">{{ tag }}</span>
+                {% endfor %}
               </p>
             </div>
           </div>
-          <br>
-          <div class="w3-card w3-round w3-white w3-center">
-            <div class="w3-container">
-              <p>Upcoming Events:</p>
-              <img src="/w3images/forest.jpg" alt="Forest" style="width:100%;">
-              <p><strong>Holiday</strong></p>
-              <p>Friday 15:00</p>
-              <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
-            </div>
-          </div>
-          <br>
-
-          <div class="w3-card w3-round w3-white w3-center">
-            <div class="w3-container">
-              <p>Friend Request</p>
-              <img src="/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
-              <span>Jane Doe</span>
-              <div class="w3-row w3-opacity">
-                <div class="w3-half">
-                  <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
-                </div>
-                <div class="w3-half">
-                  <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-
-          <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-            <p>ADS</p>
-          </div>
-          <br>
-
-          <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
-            <p><i class="fa fa-bug w3-xxlarge"></i></p>
-          </div>
-
           <!-- End Right Column -->
         </div>
 
         <!-- End Grid -->
       </div>
     </div>
+  {% if is_paginated %}
+    <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">More</a>
+  {% endif %}
   </section>
 {% endblock %}
 
 {% block javascript %}
+  <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/jquery.waypoints.min.js" %}"></script>
+  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+  <script>
+    if( document.querySelector('.infinite-container').length){
+      var infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0]
+      });
+    }
+  </script>
 {% endblock %}

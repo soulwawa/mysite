@@ -10,6 +10,15 @@ from django.core.cache import cache
 class BlogIndex(ListView):
     template_name = 'blog/blog_index.html'
     model = Post
+    paginate_by = 2
+    context_object_name = 'post_list'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(BlogIndex, self).get_context_data(**kwargs)
+        context.update({
+            'tag_list': Tag.objects.all()
+        })
+        return context
 
 
 def dev_notes(request):
