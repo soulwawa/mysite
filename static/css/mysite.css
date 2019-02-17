@@ -134,6 +134,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 100;
 }
 
 footer div {
@@ -199,4 +200,8 @@ footer p {
 
 .project-header {
   padding-top: 48px !important;
+}
+
+.infinite-container {
+  margin-bottom: 5rem;
 }

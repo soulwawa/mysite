@@ -117,3 +117,5 @@ test\.py
 \.idea/encodings\.xml
 
 \.idea/webResources\.xml
+
+\.DS_Store
