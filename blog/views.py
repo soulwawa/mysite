@@ -22,6 +22,7 @@ class BlogIndex(ListView):
         return context
 
 
+# Not Used
 def dev_notes(request):
     post_list = Post.objects.all()
     tag_list = Tag.objects.all()
@@ -53,11 +54,10 @@ def dev_search(request):
         else:
             pass
 
-        post_pages = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
-        return render(request, "blog/dev_notes_temp.html", {
-            'post_pages': post_pages,
+        post_list = Post.objects.filter(Q(title__icontains=request_value) | Q(contents__icontains=request_value))
+        return render(request, "blog/blog_index.html", {
+            'post_list': post_list,
             'tag_list': tag_list,
-            "tag": cache.get("tag")
         })
     else:
         return redirect('blog:dev-notes')
@@ -65,11 +65,10 @@ def dev_search(request):
 
 def tag_search(request, tag):
     tag_list = Tag.objects.all()
-    post_pages = Post.objects.filter(tag_set__name__icontains=tag)
-    return render(request, "blog/dev_notes_temp.html", {
-        'post_pages': post_pages,
+    post_list = Post.objects.filter(tag_set__name__icontains=tag)
+    return render(request, "blog/blog_index.html", {
+        'post_list': post_list,
         'tag_list': tag_list,
-        "tag": cache.get("tag")
     })
 
 

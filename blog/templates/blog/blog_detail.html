@@ -51,7 +51,7 @@
             <div class="w3-container w3-card w3-white w3-round w3-margin infinite-item"><br>
               <span class="w3-left w3-opacity">
                 {% for tag in post.tag_set.all %}
-                  <a href="{% url 'blog:tag-search' tag %}" style="text-decoration: none">#{{ tag }}</a>
+                  <a href="#" style="text-decoration: none">#{{ tag }}</a>
                 {% endfor %}
               </span>
               <span class="w3-right w3-opacity">{{ post.updated_at }}</span><br>
@@ -66,9 +66,7 @@
               <p>#TAG</p>
               <p>
                 {% for tag in tag_list %}
-                  <span class="w3-tag w3-large">
-                    <a href="{% url 'blog:tag-search' tag %}">{{ tag }}</a>
-                  </span>
+                  <span class="w3-tag w3-large">{{ tag }}</span>
                 {% endfor %}
               </p>
             </div>

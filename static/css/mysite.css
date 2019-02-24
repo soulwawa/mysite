@@ -205,3 +205,7 @@ footer p {
 .infinite-container {
   margin-bottom: 5rem;
 }
+
+span.w3-tag a {
+  text-decoration: none;
+}
