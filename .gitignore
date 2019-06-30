@@ -115,3 +115,4 @@ test\.py
 \.idea/inspectionProfiles/Project_Default\.xml
 
 \.idea/encodings\.xml
+mysite/.DS_Store

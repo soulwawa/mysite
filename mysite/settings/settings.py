@@ -20,7 +20,7 @@ BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c5sdx-vj1g@3x1z$m^y8!4%*f##@9b-0z53rfhyti1q0rf0l9x'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -147,7 +147,8 @@ MEDIA_DIRS = (
 MARTOR_ENABLE_CONFIGS = {
     'imgur': 'true',     # to enable/disable imgur/custom uploader.
     'mention': 'false',  # to enable/disable mention
-    'jquery': 'true',    # to include/revoke jquery (require for admin default django)
+    # to include/revoke jquery (require for admin default django)
+    'jquery': 'true',
     'living': 'false',   # to enable/disable live updates in preview
 }
 
@@ -155,15 +156,15 @@ MARTOR_ENABLE_CONFIGS = {
 MARTOR_ENABLE_LABEL = False
 
 # Imgur API Keys
-MARTOR_IMGUR_CLIENT_ID = 'ff7b5c356340aec'
-MARTOR_IMGUR_API_KEY = '6aceab508baf97f6a886fc1f938ada7c29a57fb2'
+MARTOR_IMGUR_CLIENT_ID = ''
+MARTOR_IMGUR_API_KEY = ''
 
 # Safe Mode
-MARTOR_MARKDOWN_SAFE_MODE = True # default
+MARTOR_MARKDOWN_SAFE_MODE = True  # default
 
 # Markdownify
-MARTOR_MARKDOWNIFY_FUNCTION = 'martor.utils.markdownify' # default
-MARTOR_MARKDOWNIFY_URL = '/martor/markdownify/' # default
+MARTOR_MARKDOWNIFY_FUNCTION = 'martor.utils.markdownify'  # default
+MARTOR_MARKDOWNIFY_URL = '/martor/markdownify/'  # default
 
 # Markdown extensions (default)
 MARTOR_MARKDOWN_EXTENSIONS = [
@@ -184,12 +185,13 @@ MARTOR_MARKDOWN_EXTENSIONS = [
 MARTOR_MARKDOWN_EXTENSION_CONFIGS = {}
 
 # Markdown urls
-MARTOR_UPLOAD_URL = '/martor/uploader/' # default
-MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # default
+MARTOR_UPLOAD_URL = '/martor/uploader/'  # default
+MARTOR_SEARCH_USERS_URL = '/martor/search-user/'  # default
 
 # Markdown Extensions
-MARTOR_MARKDOWN_BASE_EMOJI_URL = 'https://assets-cdn.github.com/images/icons/emoji/' # default
-MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/' # default (change this)
+MARTOR_MARKDOWN_BASE_EMOJI_URL = 'https://assets-cdn.github.com/images/icons/emoji/'  # default
+# default (change this)
+MARTOR_MARKDOWN_BASE_MENTION_URL = 'https://python.web.id/author/'
 
 CSRF_COOKIE_HTTPONLY = False
 
@@ -259,7 +261,7 @@ LOGGING = {
     }
 }
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = ""
 
 CACHES = {
     "default": {
